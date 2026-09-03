@@ -1,0 +1,40 @@
+# BULKWATCH 2027
+
+Logan → 170 lb. Felix → 165 lb. Deadline: **March 1, 2027.**
+
+Site: https://lcvaleski.github.io/bulkwatch/
+
+## How to upload your Mist food log (works from your phone)
+
+1. In Mist, export your CSV.
+2. On github.com, open `inbox/logan/` or `inbox/felix/` (whichever is you).
+3. **Add file → Upload files**, drop the CSV, commit.
+4. A robot merges it and the site updates in ~1 minute.
+
+Re-uploading old dates is fine — an export that overlaps a previous one just
+replaces those days with the newer data. You never have to trim a CSV.
+
+## How to log your weight
+
+Edit `data/logan_weight.csv` or `data/felix_weight.csv` right on github.com
+(pencil icon) and add a line:
+
+```
+2026-09-02,152.5
+```
+
+One line per weigh-in, `YYYY-MM-DD,pounds`. Same date twice = last one wins.
+
+## Local (Logan's) shortcut
+
+```
+python3 merge.py logan ~/Downloads/mist_export.csv
+python3 merge.py logan --weight 152.5
+git add -A && git commit -m gainz && git push
+```
+
+## Rules
+
+- 2600+ calories = a green day. Anything less is red and everyone can see it.
+- No logging is worse than a red day. Gray squares are shameful.
+- The chart does not negotiate.

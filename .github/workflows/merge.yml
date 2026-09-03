@@ -1,0 +1,29 @@
+name: merge inbox
+on:
+  push:
+    branches: [main]
+    paths: ["inbox/**"]
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: merge new csvs into site data
+        run: |
+          set -e
+          files=$(git diff --diff-filter=AM --name-only HEAD^ HEAD -- 'inbox/*/*.csv' || true)
+          if [ -z "$files" ]; then echo "no new csvs"; exit 0; fi
+          for f in $files; do
+            person=$(basename "$(dirname "$f")")
+            python3 merge.py "$person" "$f"
+            mkdir -p "archive/$person"
+            git mv "$f" "archive/$person/$(date +%Y%m%d%H%M%S)_$(basename "$f")"
+          done
+          git config user.name "bulkbot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "merge inbox csvs [skip ci]" && git push

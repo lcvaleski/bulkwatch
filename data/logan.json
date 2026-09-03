@@ -1,0 +1,1195 @@
+{
+ "days": {
+  "2026-04-14": {
+   "calories": 3180.0,
+   "protein": 204.5,
+   "carbs": 246.0,
+   "fat": 151.0,
+   "meals": [
+    [
+     "Five eggs half bagel",
+     500,
+     36
+    ],
+    [
+     "Salmon with rice and scallion and avocado",
+     720,
+     43
+    ],
+    [
+     "Shrimp scampi, lots of shrimp",
+     600,
+     55
+    ],
+    [
+     "Chipotle burrito",
+     1010,
+     60
+    ],
+    [
+     "Piece of brioche French toast",
+     350,
+     10
+    ]
+   ]
+  },
+  "2026-04-15": {
+   "calories": 3253.0,
+   "protein": 168.7,
+   "carbs": 271.6,
+   "fat": 141.0,
+   "meals": [
+    [
+     "Overnight oats",
+     350,
+     15
+    ],
+    [
+     "4 eggs and half bagel",
+     423,
+     30
+    ],
+    [
+     "Shrimp scampi, lots of shrimp",
+     600,
+     55
+    ],
+    [
+     "Large bowl tonkatssu ramen and a few small side salads small amount of those 3 chicken wings",
+     1230,
+     57
+    ],
+    [
+     "2 beers",
+     300,
+     2
+    ],
+    [
+     "French toast piece",
+     350,
+     10
+    ]
+   ]
+  },
+  "2026-04-16": {
+   "calories": 2310.0,
+   "protein": 125.0,
+   "carbs": 255.0,
+   "fat": 77.0,
+   "meals": [
+    [
+     "Overnight oats",
+     350,
+     15
+    ],
+    [
+     "4 chicken tacos",
+     680,
+     48
+    ],
+    [
+     "Panara chicken noodle soup",
+     130,
+     11
+    ],
+    [
+     "Salmon with rice and scallion",
+     650,
+     40
+    ],
+    [
+     "French toast",
+     350,
+     10
+    ],
+    [
+     "Beer",
+     150,
+     1
+    ]
+   ]
+  },
+  "2026-04-17": {
+   "calories": 1983.0,
+   "protein": 96.7,
+   "carbs": 163.6,
+   "fat": 60.0,
+   "meals": [
+    [
+     "4 eggs and half bagel",
+     423,
+     30
+    ],
+    [
+     "3 large tacos with a whole avocado and chicken and onion",
+     810,
+     57
+    ],
+    [
+     "4 beers",
+     600,
+     4
+    ],
+    [
+     "1 hotdog",
+     150,
+     6
+    ]
+   ]
+  },
+  "2026-04-18": {
+   "calories": 2290.0,
+   "protein": 119.0,
+   "carbs": 210.5,
+   "fat": 105.5,
+   "meals": [
+    [
+     "5 eggs half toast with whole avo",
+     640,
+     36
+    ],
+    [
+     "Pret turkey sandwich",
+     450,
+     25
+    ],
+    [
+     "Olive Garden spaghetti and meatball and breadsticks",
+     1200,
+     58
+    ]
+   ]
+  },
+  "2026-04-19": {
+   "calories": 2330.0,
+   "protein": 91.0,
+   "carbs": 243.0,
+   "fat": 92.0,
+   "meals": [
+    [
+     "Vegetable omelette",
+     250,
+     16
+    ],
+    [
+     "Muffin",
+     450,
+     6
+    ],
+    [
+     "Half cookie",
+     75,
+     1
+    ],
+    [
+     "2 small slices pizza",
+     460,
+     20
+    ],
+    [
+     "Little bit of salad and mozzarella and bread",
+     195,
+     11
+    ],
+    [
+     "2 beers",
+     300,
+     2
+    ],
+    [
+     "1 chicken gyro",
+     600,
+     35
+    ]
+   ]
+  },
+  "2026-04-20": {
+   "calories": 2905.0,
+   "protein": 123.8,
+   "carbs": 286.8,
+   "fat": 94.5,
+   "meals": [
+    [
+     "4 eggs and half bagel",
+     423,
+     30
+    ],
+    [
+     "Slice pizza",
+     230,
+     10
+    ],
+    [
+     "Momofuku ramen pack with scallion",
+     325,
+     10
+    ],
+    [
+     "Salmon",
+     367,
+     39
+    ],
+    [
+     "Ate out at Indian restaurant while high",
+     900,
+     30
+    ],
+    [
+     "Little bit of chocolate",
+     60,
+     1
+    ],
+    [
+     "4 beers",
+     600,
+     4
+    ]
+   ]
+  },
+  "2026-04-21": {
+   "calories": 2507.0,
+   "protein": 163.0,
+   "carbs": 258.0,
+   "fat": 87.0,
+   "meals": [
+    [
+     "Oats with blueberries and protein powder scoop with oat milk and Greek yogurt and creatine",
+     539,
+     51
+    ],
+    [
+     "240 cal pho",
+     240,
+     15
+    ],
+    [
+     "4 eggs and half bagel",
+     423,
+     30
+    ],
+    [
+     "Scone small",
+     300,
+     5
+    ],
+    [
+     "Chipotle burrito chicken",
+     945,
+     61
+    ],
+    [
+     "Chocolate",
+     60,
+     1
+    ]
+   ]
+  },
+  "2026-04-22": {
+   "calories": 2093.0,
+   "protein": 120.1,
+   "carbs": 185.0,
+   "fat": 90.3,
+   "meals": [
+    [
+     "4 eggs and half bagel",
+     423,
+     30
+    ],
+    [
+     "mortadella sandwich",
+     550,
+     24
+    ],
+    [
+     "Chipotle burrito chicken",
+     945,
+     61
+    ],
+    [
+     "One slice French toast",
+     175,
+     5
+    ]
+   ]
+  },
+  "2026-04-23": {
+   "calories": 2518.0,
+   "protein": 155.7,
+   "carbs": 208.6,
+   "fat": 108.0,
+   "meals": [
+    [
+     "4 eggs and half bagel",
+     423,
+     30
+    ],
+    [
+     "Salmon with rice and scallion",
+     650,
+     40
+    ],
+    [
+     "Chicken Casadilla small",
+     500,
+     25
+    ],
+    [
+     "Chipotle burrito chicken",
+     945,
+     61
+    ]
+   ]
+  },
+  "2026-04-24": {
+   "calories": 4000.0,
+   "protein": 186.5,
+   "carbs": 277.0,
+   "fat": 129.5,
+   "meals": [
+    [
+     "tapas and some steak",
+     1030,
+     68
+    ],
+    [
+     "Few glasseswhite wine",
+     375,
+     0
+    ],
+    [
+     "6 beers",
+     900,
+     6
+    ],
+    [
+     "Chipotle burrito chicken",
+     945,
+     61
+    ],
+    [
+     "5 eggs half toast",
+     400,
+     32
+    ],
+    [
+     "Small pho bowl",
+     350,
+     20
+    ]
+   ]
+  },
+  "2026-04-25": {
+   "calories": 1493.0,
+   "protein": 79.7,
+   "carbs": 150.6,
+   "fat": 63.0,
+   "meals": [
+    [
+     "Ichiran ramen",
+     470,
+     15
+    ],
+    [
+     "4 eggs and half bagel",
+     423,
+     30
+    ],
+    [
+     "Chicken giro",
+     600,
+     35
+    ]
+   ]
+  },
+  "2026-04-26": {
+   "calories": 2487.0,
+   "protein": 178.9,
+   "carbs": 210.1,
+   "fat": 100.4,
+   "meals": [
+    [
+     "Momofuku ramen pack",
+     325,
+     10
+    ],
+    [
+     "4 eggs and half bagel",
+     423,
+     30
+    ],
+    [
+     "Oats with blueberries and protein powder scoop with oat milk and Greek yogurt and creatine",
+     539,
+     51
+    ],
+    [
+     "Half rotisserie chicken",
+     700,
+     70
+    ],
+    [
+     "Some Thai food",
+     500,
+     18
+    ]
+   ]
+  },
+  "2026-04-27": {
+   "calories": 2748.0,
+   "protein": 190.0,
+   "carbs": 205.5,
+   "fat": 131.0,
+   "meals": [
+    [
+     "4 eggs and sausage",
+     468,
+     34
+    ],
+    [
+     "1.25 lb chicken with rice and avocado",
+     1495,
+     129
+    ],
+    [
+     "Slice pizza",
+     285,
+     12
+    ],
+    [
+     "Slice french toast",
+     175,
+     5
+    ],
+    [
+     "Momofuku ramen pack",
+     325,
+     10
+    ]
+   ]
+  },
+  "2026-04-28": {
+   "calories": 2719.0,
+   "protein": 168.8,
+   "carbs": 278.9,
+   "fat": 97.3,
+   "meals": [
+    [
+     "Oats with blueberries and protein powder scoop with oat milk and Greek yogurt and creatine",
+     539,
+     51
+    ],
+    [
+     "Slice pizza",
+     285,
+     12
+    ],
+    [
+     "3 egg and sausage",
+     390,
+     26
+    ],
+    [
+     "Momofuku ramen pack",
+     325,
+     10
+    ],
+    [
+     "Pasta and chicken parm large portion",
+     1005,
+     64
+    ],
+    [
+     "French toast",
+     175,
+     5
+    ]
+   ]
+  },
+  "2026-04-29": {
+   "calories": 2075.0,
+   "protein": 128.0,
+   "carbs": 182.5,
+   "fat": 87.5,
+   "meals": [
+    [
+     "Breakfast of four sunny-side-up fried eggs with runny yolks, a sausage patty, and a toasted English muffin half topped with green pesto.",
+     690,
+     45
+    ],
+    [
+     "Plate of turmeric-seasoned chicken pieces with mixed brown and wild rice and cooked Brussels sprouts.",
+     510,
+     43
+    ],
+    [
+     "Sushi dinner",
+     700,
+     35
+    ],
+    [
+     "French toast",
+     175,
+     5
+    ]
+   ]
+  },
+  "2026-04-30": {
+   "calories": 2785.0,
+   "protein": 147.0,
+   "carbs": 226.5,
+   "fat": 95.0,
+   "meals": [
+    [
+     "5 eggs half toast with whole avo",
+     640,
+     36
+    ],
+    [
+     "Chipotle burrito chicken",
+     945,
+     61
+    ],
+    [
+     "Plate of turmeric-seasoned chicken pieces with mixed brown and wild rice and cooked Brussels sprouts.",
+     510,
+     43
+    ],
+    [
+     "4 beers",
+     600,
+     4
+    ],
+    [
+     "Tomato soup",
+     90,
+     3
+    ]
+   ]
+  },
+  "2026-05-01": {
+   "calories": 2485.0,
+   "protein": 87.0,
+   "carbs": 187.0,
+   "fat": 111.0,
+   "meals": [
+    [
+     "Breakfast sandwich",
+     400,
+     20
+    ],
+    [
+     "Slice pizza",
+     285,
+     12
+    ],
+    [
+     "Half lb sausage and Momofuku noodle pack",
+     1200,
+     51
+    ],
+    [
+     "4 beers",
+     600,
+     4
+    ]
+   ]
+  },
+  "2026-05-02": {
+   "calories": 2993.0,
+   "protein": 164.5,
+   "carbs": 234.0,
+   "fat": 114.0,
+   "meals": [
+    [
+     "4 eggs half bagel and sausage",
+     608,
+     39
+    ],
+    [
+     "Chipotle bowl double chicken",
+     1090,
+     90
+    ],
+    [
+     "Kind bar",
+     195,
+     6
+    ],
+    [
+     "Bowl of beef pho",
+     500,
+     25
+    ],
+    [
+     "4 beers",
+     600,
+     4
+    ]
+   ]
+  },
+  "2026-05-03": {
+   "calories": 3110.0,
+   "protein": 196.5,
+   "carbs": 191.5,
+   "fat": 165.5,
+   "meals": [
+    [
+     "5 eggs half bagel with avocado",
+     620,
+     36
+    ],
+    [
+     "Chipotle bowl double chicken",
+     1090,
+     90
+    ],
+    [
+     "Keens steakhouse dinner",
+     1400,
+     70
+    ]
+   ]
+  },
+  "2026-05-04": {
+   "calories": 1935.0,
+   "protein": 143.0,
+   "carbs": 140.0,
+   "fat": 87.0,
+   "meals": [
+    [
+     "6 eggs half bagel",
+     560,
+     41
+    ],
+    [
+     "Chipotle bowl double chicken",
+     1090,
+     90
+    ],
+    [
+     "Slice pizza",
+     285,
+     12
+    ]
+   ]
+  },
+  "2026-05-05": {
+   "calories": 2559.0,
+   "protein": 230.3,
+   "carbs": 206.4,
+   "fat": 87.0,
+   "meals": [
+    [
+     "Oats with blueberries and protein powder scoop with oat milk and Greek yogurt and creatine",
+     539,
+     51
+    ],
+    [
+     "Chipotle bowl double chicken no rice",
+     800,
+     80
+    ],
+    [
+     "Slice of margarita pizza",
+     270,
+     11
+    ],
+    [
+     "Chipotle bowl double chicken no rice",
+     800,
+     80
+    ],
+    [
+     "Yogurt",
+     150,
+     8
+    ]
+   ]
+  },
+  "2026-05-06": {
+   "calories": 1905.0,
+   "protein": 147.2,
+   "carbs": 126.0,
+   "fat": 76.0,
+   "meals": [
+    [
+     "Chipotle bowl double chicken no rice",
+     800,
+     80
+    ],
+    [
+     "Chocolate croissant",
+     260,
+     5
+    ],
+    [
+     "Ham cheese sandwich",
+     380,
+     21
+    ],
+    [
+     "Salad small",
+     80,
+     3
+    ],
+    [
+     "Wine",
+     125,
+     0
+    ],
+    [
+     "Chicken and salmon small portions",
+     260,
+     38
+    ]
+   ]
+  },
+  "2026-05-07": {
+   "calories": 2349.0,
+   "protein": 150.3,
+   "carbs": 223.4,
+   "fat": 99.5,
+   "meals": [
+    [
+     "Oats with blueberries and protein powder scoop with oat milk and Greek yogurt and creatine",
+     539,
+     51
+    ],
+    [
+     "5 eggs half bagel",
+     610,
+     39
+    ],
+    [
+     "Full course protein version of eleven Madison meal",
+     1200,
+     60
+    ]
+   ]
+  },
+  "2026-05-08": {
+   "calories": 1800.0,
+   "protein": 132.5,
+   "carbs": 125.5,
+   "fat": 88.5,
+   "meals": [
+    [
+     "3 eggs half toast",
+     250,
+     20
+    ],
+    [
+     "Chipotle bowl double chicken",
+     1090,
+     90
+    ],
+    [
+     "Starbucks snack pack with eggs",
+     460,
+     23
+    ]
+   ]
+  },
+  "2026-05-09": {
+   "calories": 1605.0,
+   "protein": 117.0,
+   "carbs": 128.0,
+   "fat": 65.0,
+   "meals": [
+    [
+     "Large breakfast sandwich",
+     520,
+     25
+    ],
+    [
+     "Margarita pizza",
+     285,
+     12
+    ],
+    [
+     "Chipotle bowl double chicken no rice",
+     800,
+     80
+    ]
+   ]
+  },
+  "2026-05-10": {
+   "calories": 2360.0,
+   "protein": 165.0,
+   "carbs": 190.0,
+   "fat": 101.0,
+   "meals": [
+    [
+     "Breakfast sandwich",
+     400,
+     20
+    ],
+    [
+     "Chipotle bowl double chicken",
+     1090,
+     90
+    ],
+    [
+     "Chicken Schwarma",
+     350,
+     30
+    ],
+    [
+     "Bahn mi steak sandwich",
+     520,
+     25
+    ]
+   ]
+  },
+  "2026-05-11": {
+   "calories": 1840.0,
+   "protein": 103.0,
+   "carbs": 154.0,
+   "fat": 87.5,
+   "meals": [
+    [
+     "Large sandwich",
+     520,
+     25
+    ],
+    [
+     "4 eggs sausage and half bagel",
+     605,
+     37
+    ],
+    [
+     "Slice pizza",
+     285,
+     12
+    ],
+    [
+     "Salmon and rice",
+     430,
+     29
+    ]
+   ]
+  },
+  "2026-05-12": {
+   "calories": 2319.0,
+   "protein": 186.3,
+   "carbs": 168.9,
+   "fat": 100.0,
+   "meals": [
+    [
+     "Oats with blueberries and protein powder scoop with oat milk and Greek yogurt and creatine",
+     539,
+     51
+    ],
+    [
+     "Chipotle bowl double chicken",
+     1090,
+     90
+    ],
+    [
+     "Shrimp scampi",
+     400,
+     25
+    ],
+    [
+     "Arugula salad",
+     80,
+     3
+    ],
+    [
+     "2.5 eggs",
+     210,
+     17
+    ]
+   ]
+  },
+  "2026-05-13": {
+   "calories": 1549.0,
+   "protein": 108.1,
+   "carbs": 139.0,
+   "fat": 59.5,
+   "meals": [
+    [
+     "5 eggs sausage half bagel",
+     610,
+     39
+    ],
+    [
+     "Oats with blueberries and protein powder scoop with oat milk and Greek yogurt and creatine",
+     539,
+     51
+    ],
+    [
+     "Banquet food for formal",
+     400,
+     18
+    ]
+   ]
+  },
+  "2026-05-14": {
+   "calories": 650.0,
+   "protein": 32.0,
+   "carbs": 45.0,
+   "fat": 36.0,
+   "meals": [
+    [
+     "Egg avocado sausage bagel large",
+     650,
+     32
+    ]
+   ]
+  },
+  "2026-06-05": {
+   "calories": 539.0,
+   "protein": 51.3,
+   "carbs": 62.4,
+   "fat": 10.0,
+   "meals": [
+    [
+     "Oats with blueberries and protein powder scoop with oat milk and Greek yogurt and creatine",
+     539,
+     51
+    ]
+   ]
+  },
+  "2026-06-07": {
+   "calories": 1665.0,
+   "protein": 70.5,
+   "carbs": 153.0,
+   "fat": 82.0,
+   "meals": [
+    [
+     "Falafel plate with tahini over rice, mixed green salad with cucumber and red onion, pickles and pickled turnips, hummus with spices, and pieces of pita bread.",
+     1115,
+     34
+    ],
+    [
+     "5 eggs toast",
+     550,
+     37
+    ]
+   ]
+  },
+  "2026-06-10": {
+   "calories": 2310.0,
+   "protein": 119.0,
+   "carbs": 197.0,
+   "fat": 104.0,
+   "meals": [
+    [
+     "6 eggs toast",
+     610,
+     42
+    ],
+    [
+     "Giant sandwich",
+     900,
+     45
+    ],
+    [
+     "Pizza personal",
+     800,
+     32
+    ]
+   ]
+  },
+  "2026-06-11": {
+   "calories": 1300.0,
+   "protein": 55.0,
+   "carbs": 127.5,
+   "fat": 55.0,
+   "meals": [
+    [
+     "Large sandwich",
+     520,
+     25
+    ],
+    [
+     "Burrito",
+     520,
+     20
+    ],
+    [
+     "Half small burrito",
+     260,
+     10
+    ]
+   ]
+  },
+  "2026-06-12": {
+   "calories": 940.0,
+   "protein": 36.0,
+   "carbs": 115.0,
+   "fat": 35.5,
+   "meals": [
+    [
+     "Lox bagel",
+     440,
+     21
+    ],
+    [
+     "Cool sesame noodles",
+     500,
+     15
+    ]
+   ]
+  },
+  "2026-08-13": {
+   "calories": 950.0,
+   "protein": 55.0,
+   "carbs": 95.0,
+   "fat": 38.0,
+   "meals": [
+    [
+     "Overnight oats",
+     350,
+     15
+    ],
+    [
+     "Salmon plate",
+     600,
+     40
+    ]
+   ]
+  },
+  "2026-08-25": {
+   "calories": 880.0,
+   "protein": 33.0,
+   "carbs": 94.0,
+   "fat": 41.0,
+   "meals": [
+    [
+     "Toast",
+     80,
+     3
+    ],
+    [
+     "Big breakfast",
+     800,
+     30
+    ]
+   ]
+  },
+  "2026-08-29": {
+   "calories": 2400.0,
+   "protein": 105.2,
+   "carbs": 238.7,
+   "fat": 104.1,
+   "meals": [
+    [
+     "Grilled chicken bowl with white rice, black beans, avocado, pico de gallo, pickled cabbage, radishes, lime, and creamy chipotle sauce",
+     720,
+     28
+    ],
+    [
+     "Mexican eggs with small bread and small potato and some greens",
+     500,
+     27
+    ],
+    [
+     "Sesame chicken with rice and a lamb curry with potatoes",
+     1100,
+     48
+    ],
+    [
+     "Toast",
+     80,
+     3
+    ]
+   ]
+  },
+  "2026-08-30": {
+   "calories": 2200.0,
+   "protein": 79.0,
+   "carbs": 218.0,
+   "fat": 114.0,
+   "meals": [
+    [
+     "Large sandwich",
+     600,
+     25
+    ],
+    [
+     "Half pint ice cream",
+     285,
+     5
+    ],
+    [
+     "Half Mac and cheese",
+     175,
+     6
+    ],
+    [
+     "Half Bagel and cream cheese",
+     240,
+     7
+    ],
+    [
+     "Good sized dinner",
+     700,
+     30
+    ],
+    [
+     "Kind bar",
+     200,
+     6
+    ]
+   ]
+  },
+  "2026-08-31": {
+   "calories": 1988.0,
+   "protein": 129.2,
+   "carbs": 190.6,
+   "fat": 79.2,
+   "meals": [
+    [
+     "Toast",
+     80,
+     3
+    ],
+    [
+     "3 eggs",
+     216,
+     19
+    ],
+    [
+     "Coffee",
+     2,
+     0
+    ],
+    [
+     "Large piece salmon with good portion of rice and greens and pico",
+     655,
+     46
+    ],
+    [
+     "Ito en",
+     0,
+     0
+    ],
+    [
+     "Sabra Smart Snackers. One",
+     370,
+     10
+    ],
+    [
+     "Chipotle burrito bowl",
+     665,
+     51
+    ]
+   ]
+  },
+  "2026-09-01": {
+   "calories": 140.0,
+   "protein": 5.0,
+   "carbs": 18.0,
+   "fat": 6.5,
+   "meals": [
+    [
+     "Half bagel with peanut butter and banana slices",
+     140,
+     5
+    ]
+   ]
+  }
+ }
+}
