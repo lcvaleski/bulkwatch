@@ -6,64 +6,87 @@
 <title>BULKWATCH 2027</title>
 <style>
   body {
-    background: #fafafa;
-    color: #1a1a1a;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
     margin: 0;
-    padding: 24px 12px;
-    line-height: 1.45;
+    padding: 16px 8px;
+    font-size: 17px;
   }
-  #page { max-width: 720px; margin: 0 auto; }
-  h1 { font-size: 1.7em; margin: 0; letter-spacing: 1px; }
+  #page { max-width: 700px; margin: 0 auto; }
+  marquee {
+    background: #000; color: #00ff00;
+    font-family: "Courier New", monospace; font-weight: bold;
+    padding: 3px 0; margin-bottom: 12px;
+  }
+  h1 {
+    font-family: "Courier New", monospace; font-size: 2em;
+    text-align: center; margin: 8px 0 2px; letter-spacing: 2px;
+  }
+  .sub { text-align: center; margin: 0; }
+  .deadline {
+    text-align: center; font-family: "Courier New", monospace;
+    font-weight: bold; color: #cc0000; margin: 12px 0 0;
+  }
+  .deadline b { font-size: 1.6em; }
   h2 {
-    font-size: 1.05em; margin: 34px 0 10px;
-    padding-bottom: 4px; border-bottom: 2px solid #1a1a1a;
-    text-transform: uppercase; letter-spacing: 0.5px;
+    font-family: "Courier New", monospace; font-size: 1em;
+    background: #000; color: #fff;
+    padding: 4px 10px; margin: 30px 0 10px; letter-spacing: 1px;
   }
-  .sub { color: #666; margin: 2px 0 0; }
-  .deadline { font-size: 1.05em; margin: 14px 0 0; }
-  .deadline b { font-size: 1.3em; }
-  .logan { color: #0b5cd6; font-weight: 600; }
-  .felix { color: #c1121f; font-weight: 600; }
-  table.score { border-collapse: collapse; width: 100%; }
-  table.score td, table.score th { border: 1px solid #ddd; padding: 6px 10px; text-align: left; }
-  table.score th { background: #f0f0f0; }
+  .rainbow {
+    height: 5px; border: 0; margin: 18px 0 8px;
+    background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, magenta);
+  }
+  .logan { color: #0000cc; font-weight: bold; }
+  .felix { color: #cc0000; font-weight: bold; }
+  table.score {
+    border-collapse: collapse; width: 100%;
+    font-family: "Courier New", monospace; font-size: 0.82em;
+  }
+  table.score td, table.score th { border: 1px solid #000; padding: 5px 8px; text-align: left; }
+  table.score th { background: #e0e0e0; }
   table.score td + td, table.score th + th { text-align: center; }
-  tr.winner td, tr.winner th { background: #fffbe6; font-size: 1.05em; }
+  tr.winner td, tr.winner th { background: #ffffcc; }
   .cell {
     display: inline-block; width: 13px; height: 13px; margin: 0 2px 2px 0;
-    border-radius: 2px; vertical-align: middle;
+    border: 1px solid #808080; vertical-align: middle; box-sizing: border-box;
   }
-  .mo { display: inline-block; width: 38px; font-size: 0.8em; color: #666; font-variant: small-caps; }
-  .legend { color: #444; font-size: 0.85em; margin: 4px 0 10px; }
+  .mo {
+    display: inline-block; width: 46px;
+    font-family: "Courier New", monospace; font-weight: bold;
+  }
+  .legend { font-size: 0.85em; margin: 4px 0 10px; }
   .meals { font-size: 0.9em; width: 100%; border-collapse: collapse; margin-bottom: 6px; }
-  .meals td { border-bottom: 1px solid #eee; padding: 3px 6px; }
+  .meals td { border-bottom: 1px dotted #808080; padding: 2px 6px; }
   .meals td:first-child { width: 70%; }
-  .meals td + td { text-align: right; white-space: nowrap; color: #444; }
-  .small { font-size: 0.85em; color: #666; }
-  footer { margin-top: 40px; text-align: center; color: #888; font-size: 0.8em; }
+  .meals td + td { text-align: right; white-space: nowrap; font-family: "Courier New", monospace; font-size: 0.9em; }
+  .small { font-size: 0.85em; }
+  footer { margin-top: 26px; text-align: center; font-size: 0.85em; }
   .counter {
-    background: #111; color: #3f3;
-    font-family: "Courier New", monospace; padding: 1px 6px; letter-spacing: 2px; border-radius: 2px;
+    background: #000; color: #00ff00;
+    font-family: "Courier New", monospace; padding: 1px 6px; letter-spacing: 3px;
+    border: 2px inset #808080;
   }
-  svg text { font-family: -apple-system, Helvetica, Arial, sans-serif; }
-  #chart svg { width: 100%; height: auto; background: #fff; border: 1px solid #ddd; border-radius: 4px; }
+  svg text { font-family: "Courier New", monospace; }
+  #chart svg { width: 100%; height: auto; background: #fff; border: 1px solid #000; }
 </style>
 </head>
 <body>
 <div id="page">
+  <marquee scrollamount="6">★★★ BULKWATCH 2027 ★★★ TWO MEN ★★★ ONE SCALE ★★★ LOGAN → 170 ★★★ FELIX → 165 ★★★ DEADLINE MARCH 1 2027 ★★★ EAT OR BE NOTHING ★★★</marquee>
   <h1>⚖️ BULKWATCH 2027</h1>
-  <p class="sub"><span class="logan">Logan</span> → 170 lb &nbsp;vs&nbsp; <span class="felix">Felix</span> → 165 lb &nbsp;·&nbsp; deadline March 1, 2027</p>
-  <p class="deadline"><b id="daysleft">?</b> days left</p>
+  <p class="sub">the official <span class="logan">LOGAN</span> vs <span class="felix">FELIX</span> mass acquisition accountability page</p>
+  <p class="deadline"><b id="daysleft">?</b> DAYS UNTIL MARCH 1</p>
 
-  <h2>The scale</h2>
+  <h2>THE SCALE (CANONICAL, NO LYING)</h2>
   <div id="chart"><i>loading…</i></div>
   <p class="small">solid = actual weigh-ins · dashed = pace needed to hit goal by 3/1 · ★ = goal</p>
 
-  <h2>Scoreboard</h2>
+  <h2>SCOREBOARD</h2>
   <div id="scoreboard"><i>loading…</i></div>
 
-  <h2>Did you eat 2600?</h2>
+  <h2>THE GRID — DID YOU EAT 2600?</h2>
   <p class="legend">
     <span class="cell" style="background:#2da44e"></span> hit 2600+ &nbsp;
     <span class="cell" style="background:#d1242f"></span> logged, under &nbsp;
@@ -72,12 +95,15 @@
   </p>
   <div id="grid"><i>loading…</i></div>
 
-  <h2>Last logged meals</h2>
+  <h2>LAST KNOWN MEALS</h2>
   <div id="lastmeals"><i>loading…</i></div>
 
+  <hr class="rainbow">
   <footer>
     you are visitor number <span class="counter" id="hits">000000</span><br>
-    © 2026 logan &amp; felix productions · all gains reserved
+    [ ← prev | GAIN WEBRING | next → ]<br>
+    sign the guestbook: yell at whoever is losing<br>
+    © 1997 logan &amp; felix productions · all gains reserved
   </footer>
 </div>
 
@@ -87,8 +113,8 @@ const CAL_GOAL = 2600;
 const START = "2026-09-01";
 const END = "2027-03-01";
 const PEOPLE = [
-  { key: "logan", name: "Logan", goal: 170, color: "#0b5cd6", cls: "logan" },
-  { key: "felix", name: "Felix", goal: 165, color: "#c1121f", cls: "felix" },
+  { key: "logan", name: "LOGAN", goal: 170, color: "#0000cc", cls: "logan" },
+  { key: "felix", name: "FELIX", goal: 165, color: "#cc0000", cls: "felix" },
 ];
 
 const D = s => new Date(s + "T00:00:00");
@@ -136,7 +162,7 @@ function drawChart() {
   const all = PEOPLE.flatMap(p => p.weights);
   const el = document.getElementById("chart");
   if (!all.length) {
-    el.innerHTML = '<p style="border:1px dashed #bbb;border-radius:4px;background:#fff;padding:40px 10px;text-align:center;color:#888">no weigh-ins yet — step on the scale</p>';
+    el.innerHTML = '<p style="border:2px dashed #000;background:#fff;padding:40px 10px;text-align:center;color:#cc0000;font-family:Courier New,monospace;font-weight:bold">NO WEIGH-INS YET — STEP ON THE SCALE</p>';
     return;
   }
   const W = 680, H = 340, L = 44, R = 78, T = 16, B = 28;
@@ -154,7 +180,7 @@ function drawChart() {
   for (let d = new Date(x0); d <= new Date(x1); d.setMonth(d.getMonth() + 1, 1)) {
     if (+d < x0) continue;
     s += `<line x1="${X(+d)}" y1="${T}" x2="${X(+d)}" y2="${H - B}" stroke="#f3f3f3"/>`
-       + `<text x="${X(+d)}" y="${H - B + 14}" font-size="11" fill="#888" text-anchor="middle">${d.toLocaleString("en", { month: "short" })}</text>`;
+       + `<text x="${X(+d)}" y="${H - B + 14}" font-size="11" fill="#888" text-anchor="middle">${d.toLocaleString("en", { month: "short" }).toUpperCase()}</text>`;
   }
   for (const p of PEOPLE) {
     if (!p.weights.length) continue;
@@ -201,14 +227,14 @@ function drawScoreboard() {
   const [a, b] = PEOPLE.map(stats);
   const q = (v, suf = "") => v === null ? "—" : (typeof v === "number" && !Number.isInteger(v) ? v.toFixed(1) : v) + suf;
   const row = (label, va, vb) => `<tr><td>${label}</td><td class="logan">${va}</td><td class="felix">${vb}</td></tr>`;
-  let winner = "too early to call — weigh in";
+  let winner = "TOO EARLY TO CALL — WEIGH IN";
   if (a.pct !== null && b.pct !== null) {
-    winner = a.pct === b.pct ? "dead heat" :
-      (a.pct > b.pct ? `<span class="logan">👑 Logan leads</span>` : `<span class="felix">👑 Felix leads</span>`);
+    winner = a.pct === b.pct ? "DEAD HEAT" :
+      (a.pct > b.pct ? `<span class="logan">👑 LOGAN LEADS 👑</span>` : `<span class="felix">👑 FELIX LEADS 👑</span>`);
   }
   document.getElementById("scoreboard").innerHTML = `
   <table class="score">
-    <tr><th></th><th class="logan">Logan</th><th class="felix">Felix</th></tr>
+    <tr><th></th><th class="logan">LOGAN</th><th class="felix">FELIX</th></tr>
     ${row("current weight", q(a.cur, " lb"), q(b.cur, " lb"))}
     ${row("goal", "170 lb", "165 lb")}
     ${row("lbs to go", q(a.togo), q(b.togo))}
@@ -235,7 +261,7 @@ function drawGrid() {
       if (cur.getMonth() !== month) {
         if (line) lines.push(line);
         month = cur.getMonth();
-        line = `<span class="mo">${cur.toLocaleString("en", { month: "short" })}</span>`;
+        line = `<span class="mo">${cur.toLocaleString("en", { month: "short" }).toUpperCase()}</span>`;
       }
       const k = iso(cur);
       const day = p.days[k];
@@ -261,12 +287,12 @@ function drawMeals() {
   for (const p of PEOPLE) {
     const dates = Object.keys(p.days).sort();
     if (!dates.length) {
-      html += `<p><span class="${p.cls}">${p.name}</span>: no food logged yet. upload a CSV.</p>`;
+      html += `<p><span class="${p.cls}">${p.name}</span>: has never eaten food. UPLOAD A CSV!</p>`;
       continue;
     }
     const d = dates[dates.length - 1];
     const day = p.days[d];
-    html += `<p style="margin:12px 0 4px"><span class="${p.cls}">${p.name}</span> — ${fmt(d)}: <b>${Math.round(day.calories)} cal</b>, ${Math.round(day.protein)}g protein ${day.calories >= CAL_GOAL ? "✅" : "❌ under 2600"}</p>
+    html += `<p style="margin:12px 0 4px"><span class="${p.cls}">${p.name}</span> — ${fmt(d)}: <b>${Math.round(day.calories)} cal</b>, ${Math.round(day.protein)}g protein ${day.calories >= CAL_GOAL ? "✅" : "❌ UNDER 2600, WEAK"}</p>
     <table class="meals">${day.meals.map(m => `<tr><td>${m[0]}</td><td>${m[1]} cal</td><td>${m[2]}g pro</td></tr>`).join("")}</table>`;
   }
   document.getElementById("lastmeals").innerHTML = html;
