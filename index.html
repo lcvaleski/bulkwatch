@@ -6,98 +6,79 @@
 <title>BULKWATCH 2027</title>
 <style>
   body {
-    background: #008080;
-    font-family: "Times New Roman", Times, serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     margin: 0;
-    padding: 12px 4px;
+    padding: 24px 12px;
+    line-height: 1.45;
   }
-  #page {
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    background: #FFFFFF;
-    border: 6px ridge #C0C0C0;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-  h1, h2, h3 { font-family: "Comic Sans MS", "Comic Sans", cursive; }
-  h1 { text-align: center; color: #FF00FF; text-shadow: 2px 2px #00FFFF; margin: 4px 0; font-size: 2em; }
+  #page { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 1.7em; margin: 0; letter-spacing: 1px; }
   h2 {
-    background: #000080; color: #FFFF00; padding: 3px 8px;
-    font-size: 1.1em; margin: 18px 0 8px 0; border: 2px outset #C0C0C0;
+    font-size: 1.05em; margin: 34px 0 10px;
+    padding-bottom: 4px; border-bottom: 2px solid #1a1a1a;
+    text-transform: uppercase; letter-spacing: 0.5px;
   }
-  .blink { animation: blink 1s steps(2, start) infinite; }
-  @keyframes blink { to { visibility: hidden; } }
-  .rainbow {
-    height: 6px; border: 0; margin: 10px 0;
-    background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, magenta);
-  }
-  .center { text-align: center; }
-  marquee, .marq { background: #000000; color: #00FF00; font-family: "Courier New", monospace; padding: 2px 0; }
-  table.score { border-collapse: collapse; width: 100%; font-size: 0.95em; }
-  table.score td, table.score th { border: 2px inset #C0C0C0; padding: 3px 6px; }
-  table.score th { background: #C0C0C0; font-family: "Comic Sans MS", cursive; }
-  .logan { color: #0000CC; font-weight: bold; }
-  .felix { color: #CC0000; font-weight: bold; }
+  .sub { color: #666; margin: 2px 0 0; }
+  .deadline { font-size: 1.05em; margin: 14px 0 0; }
+  .deadline b { font-size: 1.3em; }
+  .logan { color: #0b5cd6; font-weight: 600; }
+  .felix { color: #c1121f; font-weight: 600; }
+  table.score { border-collapse: collapse; width: 100%; }
+  table.score td, table.score th { border: 1px solid #ddd; padding: 6px 10px; text-align: left; }
+  table.score th { background: #f0f0f0; }
+  table.score td + td, table.score th + th { text-align: center; }
+  tr.winner td, tr.winner th { background: #fffbe6; font-size: 1.05em; }
   .cell {
-    display: inline-block; width: 11px; height: 11px; margin: 0 1px 1px 0;
-    border: 1px solid #808080; vertical-align: middle;
+    display: inline-block; width: 13px; height: 13px; margin: 0 2px 2px 0;
+    border-radius: 2px; vertical-align: middle;
   }
-  .mo { font-family: "Courier New", monospace; font-weight: bold; display: inline-block; width: 36px; }
+  .mo { display: inline-block; width: 38px; font-size: 0.8em; color: #666; font-variant: small-caps; }
+  .legend { color: #444; font-size: 0.85em; margin: 4px 0 10px; }
+  .meals { font-size: 0.9em; width: 100%; border-collapse: collapse; margin-bottom: 6px; }
+  .meals td { border-bottom: 1px solid #eee; padding: 3px 6px; }
+  .meals td:first-child { width: 70%; }
+  .meals td + td { text-align: right; white-space: nowrap; color: #444; }
+  .small { font-size: 0.85em; color: #666; }
+  footer { margin-top: 40px; text-align: center; color: #888; font-size: 0.8em; }
   .counter {
-    background: #000; color: #0F0; font-family: "Courier New", monospace;
-    padding: 1px 5px; letter-spacing: 3px; border: 2px inset #808080;
+    background: #111; color: #3f3;
+    font-family: "Courier New", monospace; padding: 1px 6px; letter-spacing: 2px; border-radius: 2px;
   }
-  .badge {
-    display: inline-block; background: #000080; color: #fff; font-family: "Courier New", monospace;
-    font-size: 10px; border: 1px solid #fff; outline: 1px solid #000; padding: 2px 5px; margin: 2px;
-  }
-  .meals { font-size: 0.85em; width: 100%; border-collapse: collapse; }
-  .meals td { border-bottom: 1px dotted #808080; padding: 1px 4px; }
-  .small { font-size: 0.8em; }
-  svg text { font-family: "Courier New", monospace; }
-  a { color: #0000EE; }
-  a:visited { color: #551A8B; }
+  svg text { font-family: -apple-system, Helvetica, Arial, sans-serif; }
+  #chart svg { width: 100%; height: auto; background: #fff; border: 1px solid #ddd; border-radius: 4px; }
 </style>
 </head>
 <body>
 <div id="page">
-  <marquee scrollamount="6">★★★ BULKWATCH 2027 ★★★ TWO MEN ★★★ ONE SCALE ★★★ DEADLINE: MARCH 1st 2027 ★★★ LOGAN → 170 LBS ★★★ FELIX → 165 LBS ★★★ EAT OR BE NOTHING ★★★</marquee>
-  <h1>⚖️ BULKWATCH 2027 ⚖️</h1>
-  <p class="center small">the official <span class="logan">LOGAN</span> vs <span class="felix">FELIX</span> mass acquisition accountability page</p>
-  <p class="center"><span class="blink" style="color:red;font-weight:bold;">⚠ ONLY <span id="daysleft">???</span> DAYS UNTIL MARCH 1st ⚠</span></p>
-  <hr class="rainbow">
+  <h1>⚖️ BULKWATCH 2027</h1>
+  <p class="sub"><span class="logan">Logan</span> → 170 lb &nbsp;vs&nbsp; <span class="felix">Felix</span> → 165 lb &nbsp;·&nbsp; deadline March 1, 2027</p>
+  <p class="deadline"><b id="daysleft">?</b> days left</p>
 
-  <h2>📈 THE SCALE (canonical, no lying)</h2>
-  <div id="chart" class="center"><i>loading…</i></div>
-  <p class="small center">solid line = actual weigh-ins &nbsp;•&nbsp; dashed line = pace required to hit goal by 3/1 &nbsp;•&nbsp; ★ = the promised land</p>
+  <h2>The scale</h2>
+  <div id="chart"><i>loading…</i></div>
+  <p class="small">solid = actual weigh-ins · dashed = pace needed to hit goal by 3/1 · ★ = goal</p>
 
-  <h2>🏆 SCOREBOARD</h2>
+  <h2>Scoreboard</h2>
   <div id="scoreboard"><i>loading…</i></div>
 
-  <h2>🍚 THE GRID — did you eat 2600 or not</h2>
-  <p class="small">
-    <span class="cell" style="background:#00CC00"></span> hit 2600+ cal &nbsp;
-    <span class="cell" style="background:#FF3300"></span> logged, but under &nbsp;
-    <span class="cell" style="background:#D8D8D8"></span> didn't even log &nbsp;
-    <span class="cell" style="background:#FFFFFF"></span> the future
+  <h2>Did you eat 2600?</h2>
+  <p class="legend">
+    <span class="cell" style="background:#2da44e"></span> hit 2600+ &nbsp;
+    <span class="cell" style="background:#d1242f"></span> logged, under &nbsp;
+    <span class="cell" style="background:#c9c9c9"></span> didn't log &nbsp;
+    <span class="cell" style="background:#fff;border:1px solid #ddd;width:11px;height:11px"></span> future
   </p>
   <div id="grid"><i>loading…</i></div>
 
-  <h2>🍽️ LAST KNOWN MEALS</h2>
+  <h2>Last logged meals</h2>
   <div id="lastmeals"><i>loading…</i></div>
 
-  <hr class="rainbow">
-  <p class="center">
-    <span class="badge">BEST VIEWED IN<br>NETSCAPE NAVIGATOR 4.0</span>
-    <span class="badge">800 x 600<br>RESOLUTION</span>
-    <span class="badge">GAINS<br>INSIDE</span>
-    <span class="badge blink">UNDER<br>CONSTRUCTION</span>
-  </p>
-  <p class="center">you are visitor number <span class="counter" id="hits">000000</span></p>
-  <p class="center small">[ <a href="#">← prev</a> | <a href="#">GAIN WEBRING</a> | <a href="#">next →</a> ]<br>
-  sign the guestbook: yell at whoever is losing<br>
-  © 1997 logan &amp; felix productions. all gains reserved.</p>
+  <footer>
+    you are visitor number <span class="counter" id="hits">000000</span><br>
+    © 2026 logan &amp; felix productions · all gains reserved
+  </footer>
 </div>
 
 <script>
@@ -106,8 +87,8 @@ const CAL_GOAL = 2600;
 const START = "2026-09-01";
 const END = "2027-03-01";
 const PEOPLE = [
-  { key: "logan", name: "LOGAN", goal: 170, color: "#0000CC", cls: "logan" },
-  { key: "felix", name: "FELIX", goal: 165, color: "#CC0000", cls: "felix" },
+  { key: "logan", name: "Logan", goal: 170, color: "#0b5cd6", cls: "logan" },
+  { key: "felix", name: "Felix", goal: 165, color: "#c1121f", cls: "felix" },
 ];
 
 const D = s => new Date(s + "T00:00:00");
@@ -155,10 +136,10 @@ function drawChart() {
   const all = PEOPLE.flatMap(p => p.weights);
   const el = document.getElementById("chart");
   if (!all.length) {
-    el.innerHTML = '<p class="blink" style="color:red;font-weight:bold;font-size:1.2em;">NO WEIGH-INS LOGGED YET!!<br>STEP ON THE SCALE, COWARDS</p>';
+    el.innerHTML = '<p style="border:1px dashed #bbb;border-radius:4px;background:#fff;padding:40px 10px;text-align:center;color:#888">no weigh-ins yet — step on the scale</p>';
     return;
   }
-  const W = 660, H = 320, L = 44, R = 74, T = 16, B = 28;
+  const W = 680, H = 340, L = 44, R = 78, T = 16, B = 28;
   const x0 = Math.min(...all.map(w => +D(w.date)), +D(START));
   const x1 = +D(END);
   const lo = Math.floor(Math.min(...all.map(w => w.lbs)) / 5) * 5 - 5;
@@ -167,26 +148,26 @@ function drawChart() {
   const Y = v => T + (hi - v) / (hi - lo) * (H - T - B);
   let s = "";
   for (let v = lo; v <= hi; v += 5) {
-    s += `<line x1="${L}" y1="${Y(v)}" x2="${W - R}" y2="${Y(v)}" stroke="#DDD"/>`
-       + `<text x="${L - 5}" y="${Y(v) + 3}" font-size="10" text-anchor="end">${v}</text>`;
+    s += `<line x1="${L}" y1="${Y(v)}" x2="${W - R}" y2="${Y(v)}" stroke="#eee"/>`
+       + `<text x="${L - 6}" y="${Y(v) + 4}" font-size="11" fill="#888" text-anchor="end">${v}</text>`;
   }
   for (let d = new Date(x0); d <= new Date(x1); d.setMonth(d.getMonth() + 1, 1)) {
     if (+d < x0) continue;
-    s += `<line x1="${X(+d)}" y1="${T}" x2="${X(+d)}" y2="${H - B}" stroke="#EEE"/>`
-       + `<text x="${X(+d)}" y="${H - B + 12}" font-size="10" text-anchor="middle">${d.toLocaleString("en", { month: "short" }).toUpperCase()}</text>`;
+    s += `<line x1="${X(+d)}" y1="${T}" x2="${X(+d)}" y2="${H - B}" stroke="#f3f3f3"/>`
+       + `<text x="${X(+d)}" y="${H - B + 14}" font-size="11" fill="#888" text-anchor="middle">${d.toLocaleString("en", { month: "short" })}</text>`;
   }
   for (const p of PEOPLE) {
     if (!p.weights.length) continue;
     const pts = p.weights.map(w => [X(+D(w.date)), Y(w.lbs)]);
     const last = p.weights[p.weights.length - 1];
-    s += `<line x1="${pts[pts.length - 1][0]}" y1="${pts[pts.length - 1][1]}" x2="${X(x1)}" y2="${Y(p.goal)}" stroke="${p.color}" stroke-dasharray="5,4" stroke-width="1.5" opacity="0.6"/>`;
+    s += `<line x1="${pts[pts.length - 1][0]}" y1="${pts[pts.length - 1][1]}" x2="${X(x1)}" y2="${Y(p.goal)}" stroke="${p.color}" stroke-dasharray="5,4" stroke-width="1.5" opacity="0.5"/>`;
     if (pts.length > 1) s += `<polyline points="${pts.map(q => q.join(",")).join(" ")}" fill="none" stroke="${p.color}" stroke-width="2.5"/>`;
     s += pts.map((q, i) => `<circle cx="${q[0]}" cy="${q[1]}" r="4" fill="${p.color}"><title>${p.name} ${fmt(p.weights[i].date)}: ${p.weights[i].lbs} lb</title></circle>`).join("");
-    s += `<text x="${X(x1) + 4}" y="${Y(p.goal) + 4}" font-size="12" fill="${p.color}" font-weight="bold">★${p.goal}</text>`;
-    s += `<text x="${pts[pts.length - 1][0] + 6}" y="${pts[pts.length - 1][1] - 7}" font-size="11" fill="${p.color}" font-weight="bold">${p.name} ${last.lbs}</text>`;
+    s += `<text x="${X(x1) + 4}" y="${Y(p.goal) + 4}" font-size="13" fill="${p.color}" font-weight="bold">★ ${p.goal}</text>`;
+    s += `<text x="${pts[pts.length - 1][0] + 7}" y="${pts[pts.length - 1][1] - 8}" font-size="12" fill="${p.color}" font-weight="bold">${p.name} ${last.lbs}</text>`;
   }
-  s += `<line x1="${L}" y1="${H - B}" x2="${W - R}" y2="${H - B}" stroke="#000"/><line x1="${L}" y1="${T}" x2="${L}" y2="${H - B}" stroke="#000"/>`;
-  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;border:2px inset #C0C0C0;background:#FFFFF8">${s}</svg>`;
+  s += `<line x1="${L}" y1="${H - B}" x2="${W - R}" y2="${H - B}" stroke="#999"/><line x1="${L}" y1="${T}" x2="${L}" y2="${H - B}" stroke="#999"/>`;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}">${s}</svg>`;
 }
 
 /* ---------- scoreboard ---------- */
@@ -218,26 +199,26 @@ function stats(p) {
 
 function drawScoreboard() {
   const [a, b] = PEOPLE.map(stats);
-  const q = (v, suf = "") => v === null ? "???" : (typeof v === "number" && !Number.isInteger(v) ? v.toFixed(1) : v) + suf;
-  const row = (label, va, vb) => `<tr><td>${label}</td><td class="center logan">${va}</td><td class="center felix">${vb}</td></tr>`;
-  let winner = "<span class='blink'>TOO EARLY TO CALL — WEIGH IN</span>";
+  const q = (v, suf = "") => v === null ? "—" : (typeof v === "number" && !Number.isInteger(v) ? v.toFixed(1) : v) + suf;
+  const row = (label, va, vb) => `<tr><td>${label}</td><td class="logan">${va}</td><td class="felix">${vb}</td></tr>`;
+  let winner = "too early to call — weigh in";
   if (a.pct !== null && b.pct !== null) {
-    winner = a.pct === b.pct ? "DEAD HEAT" :
-      (a.pct > b.pct ? `<span class="logan">👑 LOGAN LEADS 👑</span>` : `<span class="felix">👑 FELIX LEADS 👑</span>`);
+    winner = a.pct === b.pct ? "dead heat" :
+      (a.pct > b.pct ? `<span class="logan">👑 Logan leads</span>` : `<span class="felix">👑 Felix leads</span>`);
   }
   document.getElementById("scoreboard").innerHTML = `
   <table class="score">
-    <tr><th></th><th class="logan">LOGAN</th><th class="felix">FELIX</th></tr>
+    <tr><th></th><th class="logan">Logan</th><th class="felix">Felix</th></tr>
     ${row("current weight", q(a.cur, " lb"), q(b.cur, " lb"))}
     ${row("goal", "170 lb", "165 lb")}
     ${row("lbs to go", q(a.togo), q(b.togo))}
     ${row("pace needed", q(a.pace, " lb/wk"), q(b.pace, " lb/wk"))}
-    ${row("gap closed", a.pct === null ? "???" : Math.round(Math.max(0, a.pct)) + "%", b.pct === null ? "???" : Math.round(Math.max(0, b.pct)) + "%")}
-    ${row("last weigh-in", a.lastDate ? fmt(a.lastDate) : "NEVER!!", b.lastDate ? fmt(b.lastDate) : "NEVER!!")}
-    ${row("2600+ days (since 9/1)", a.hits + " / " + a.logged + " logged", b.hits + " / " + b.logged + " logged")}
+    ${row("gap closed", a.pct === null ? "—" : Math.round(Math.max(0, a.pct)) + "%", b.pct === null ? "—" : Math.round(Math.max(0, b.pct)) + "%")}
+    ${row("last weigh-in", a.lastDate ? fmt(a.lastDate) : "never", b.lastDate ? fmt(b.lastDate) : "never")}
+    ${row("2600+ days since 9/1", a.hits + " of " + a.logged + " logged", b.hits + " of " + b.logged + " logged")}
     ${row("current streak", a.streak + " day" + (a.streak === 1 ? "" : "s"), b.streak + " day" + (b.streak === 1 ? "" : "s"))}
     ${row("avg cals, last 7 days", q(a.avg7), q(b.avg7))}
-    <tr><th>WHO'S WINNING</th><th colspan="2" class="center">${winner}</th></tr>
+    <tr class="winner"><th>who's winning</th><td colspan="2" style="text-align:center">${winner}</td></tr>
   </table>`;
 }
 
@@ -245,7 +226,7 @@ function drawScoreboard() {
 function drawGrid() {
   let html = "";
   for (const p of PEOPLE) {
-    html += `<p style="margin:8px 0 2px"><span class="${p.cls}">${p.name}</span></p>`;
+    html += `<p style="margin:10px 0 3px"><span class="${p.cls}">${p.name}</span></p>`;
     let cur = D(START);
     const end = D(END);
     let month = -1, line = "";
@@ -254,16 +235,18 @@ function drawGrid() {
       if (cur.getMonth() !== month) {
         if (line) lines.push(line);
         month = cur.getMonth();
-        line = `<span class="mo">${cur.toLocaleString("en", { month: "short" }).toUpperCase()}</span>`;
+        line = `<span class="mo">${cur.toLocaleString("en", { month: "short" })}</span>`;
       }
       const k = iso(cur);
       const day = p.days[k];
-      let c = "#FFFFFF", t = k + ": the future";
+      let style = "background:#fff;border:1px solid #e5e5e5;width:11px;height:11px", t = k + ": the future";
       if (k <= today) {
-        if (day) { c = day.calories >= CAL_GOAL ? "#00CC00" : "#FF3300"; t = k + ": " + Math.round(day.calories) + " cal"; }
-        else { c = "#D8D8D8"; t = k + ": no log!!"; }
+        if (day) {
+          style = "background:" + (day.calories >= CAL_GOAL ? "#2da44e" : "#d1242f");
+          t = k + ": " + Math.round(day.calories) + " cal";
+        } else { style = "background:#c9c9c9"; t = k + ": no log"; }
       }
-      line += `<span class="cell" style="background:${c}" title="${t}"></span>`;
+      line += `<span class="cell" style="${style}" title="${t}"></span>`;
       cur.setDate(cur.getDate() + 1);
     }
     lines.push(line);
@@ -278,13 +261,13 @@ function drawMeals() {
   for (const p of PEOPLE) {
     const dates = Object.keys(p.days).sort();
     if (!dates.length) {
-      html += `<p><span class="${p.cls}">${p.name}</span>: has never eaten food. <span class="blink">UPLOAD A CSV!!</span></p>`;
+      html += `<p><span class="${p.cls}">${p.name}</span>: no food logged yet. upload a CSV.</p>`;
       continue;
     }
     const d = dates[dates.length - 1];
     const day = p.days[d];
-    html += `<p style="margin:8px 0 2px"><span class="${p.cls}">${p.name}</span> — last logged day: <b>${fmt(d)}</b> (${Math.round(day.calories)} cal, ${Math.round(day.protein)}g protein ${day.calories >= CAL_GOAL ? "✅" : "❌ UNDER 2600, WEAK"})</p>
-    <table class="meals">${day.meals.map(m => `<tr><td>${m[0]}</td><td align="right">${m[1]} cal</td><td align="right">${m[2]}g pro</td></tr>`).join("")}</table>`;
+    html += `<p style="margin:12px 0 4px"><span class="${p.cls}">${p.name}</span> — ${fmt(d)}: <b>${Math.round(day.calories)} cal</b>, ${Math.round(day.protein)}g protein ${day.calories >= CAL_GOAL ? "✅" : "❌ under 2600"}</p>
+    <table class="meals">${day.meals.map(m => `<tr><td>${m[0]}</td><td>${m[1]} cal</td><td>${m[2]}g pro</td></tr>`).join("")}</table>`;
   }
   document.getElementById("lastmeals").innerHTML = html;
 }
