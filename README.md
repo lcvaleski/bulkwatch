@@ -2,7 +2,7 @@
 
 Logan → 170 lb. Felix → 165 lb. Deadline: **March 1, 2027.**
 
-Site: https://lcvaleski.github.io/bulkwatch/
+Site: https://logan.valeski.org/bulkwatch/
 
 ## How to upload your Mist food log (works from your phone)
 
