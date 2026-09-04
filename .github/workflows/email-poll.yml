@@ -1,0 +1,28 @@
+name: email poll
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: fetch email uploads
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          if [ -z "$GMAIL_APP_PASSWORD" ]; then
+            echo "gmail secrets not set yet — skipping"
+            exit 0
+          fi
+          python3 email_ingest.py
+      - name: commit if changed
+        run: |
+          git config user.name bulkbot
+          git config user.email actions@users.noreply.github.com
+          git add data
+          git diff --cached --quiet || (git commit -m "email upload [skip ci]" && git push)

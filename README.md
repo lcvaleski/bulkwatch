@@ -4,7 +4,14 @@ Logan → 170 lb. Felix → 165 lb. Deadline: **March 1, 2027.**
 
 Site: https://logan.valeski.org/bulkwatch/
 
-## How to upload your Mist food log (works from your phone)
+## Easiest: email it in
+
+Email your Mist CSV export to **loganvaleski+bulkwatch@gmail.com** (from the
+email address registered in `senders.json`). You can also weigh in with no
+attachment at all — just put e.g. `weight 152.5` in the subject line.
+A robot checks the mailbox every 30 minutes and updates the site.
+
+## Or upload through GitHub
 
 1. In Mist, export your CSV.
 2. On github.com, open `inbox/logan/` or `inbox/felix/` (whichever is you).
