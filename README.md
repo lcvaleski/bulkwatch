@@ -6,8 +6,8 @@ Site: https://logan.valeski.org/bulkwatch/
 
 ## Easiest: email it in
 
-Email your Mist CSV export to **loganvaleski+bulkwatch@gmail.com** (from the
-email address registered in `senders.json`). You can also weigh in with no
+Email your Mist CSV export to **bulkwatch@in.river.page** (from the email
+address registered in `senders.json`). You can also weigh in with no
 attachment at all — just put e.g. `weight 152.5` in the subject line.
 A robot checks the mailbox every 30 minutes and updates the site.
 

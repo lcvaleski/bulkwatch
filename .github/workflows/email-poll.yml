@@ -10,16 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: fetch email uploads
+      - name: fetch email uploads from resend
         env:
-          GMAIL_USER: ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         run: |
-          if [ -z "$GMAIL_APP_PASSWORD" ]; then
-            echo "gmail secrets not set yet — skipping"
+          if [ -z "$RESEND_API_KEY" ]; then
+            echo "RESEND_API_KEY not set yet — skipping"
             exit 0
           fi
-          python3 email_ingest.py
+          python3 resend_ingest.py
       - name: commit if changed
         run: |
           git config user.name bulkbot
