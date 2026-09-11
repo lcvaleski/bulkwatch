@@ -73,6 +73,13 @@
     border: 2px inset #808080;
   }
   svg text { font-family: "Courier New", monospace; }
+  @media (max-width: 480px) {
+    body { padding: 10px 6px; font-size: 15px; }
+    .cell { width: 9px; height: 9px; margin: 0 1px 1px 0; }
+    .mo { width: 34px; font-size: 0.75em; }
+    table.score { font-size: 0.68em; }
+    table.score td, table.score th { padding: 4px 5px; }
+  }
   #chart svg { width: 100%; height: auto; background: #fff; border: 1px solid #000; }
 </style>
 </head>
