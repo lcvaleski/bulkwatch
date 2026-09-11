@@ -172,43 +172,47 @@ Promise.all([
   drawChart(); drawScoreboard(); drawGrid(); drawMeals();
 });
 
-/* ---------- weight chart ---------- */
+/* ---------- weight charts (side by side) ---------- */
 function drawChart() {
-  const all = PEOPLE.flatMap(p => p.weights);
   const el = document.getElementById("chart");
-  if (!all.length) {
-    el.innerHTML = '<p style="border:2px dashed #000;background:#fff;padding:40px 10px;text-align:center;color:#cc0000;font-family:Courier New,monospace;font-weight:bold">NO WEIGH-INS YET — STEP ON THE SCALE</p>';
-    return;
-  }
-  const W = 680, H = 340, L = 44, R = 78, T = 16, B = 28;
-  const x0 = Math.min(...all.map(w => +D(w.date)), +D(START));
+  const x0 = Math.min(...PEOPLE.flatMap(p => p.weights.map(w => +D(w.date))), +D(START));
   const x1 = +D(END);
-  const lo = Math.floor(Math.min(...all.map(w => w.lbs)) / 5) * 5 - 5;
-  const hi = Math.ceil(Math.max(...all.map(w => w.lbs), 170) / 5) * 5 + 5;
+  el.innerHTML = '<div style="display:flex;flex-wrap:wrap;gap:10px">'
+    + PEOPLE.map(p => '<div style="flex:1 1 300px;min-width:0">' + panel(p, x0, x1) + "</div>").join("")
+    + "</div>";
+}
+
+function panel(p, x0, x1) {
+  const head = `<p style="margin:0 0 4px;text-align:center;font-family:'Courier New',monospace"><span class="${p.cls}">${p.name}</span> <span class="small">&rarr; ${p.goal} lb by 3/1</span></p>`;
+  if (!p.weights.length) {
+    return head + `<div style="border:2px dashed #000;padding:44px 6px;text-align:center;color:#cc0000;font-family:'Courier New',monospace;font-weight:bold;font-size:0.75em">NO WEIGH-INS YET</div>`;
+  }
+  const W = 330, H = 290, L = 34, R = 14, T = 14, B = 24;
+  const lo = Math.floor(Math.min(...p.weights.map(w => w.lbs)) / 5) * 5 - 5;
+  const hi = Math.ceil(Math.max(...p.weights.map(w => w.lbs), p.goal) / 5) * 5 + 5;
   const X = t => L + (t - x0) / (x1 - x0) * (W - L - R);
   const Y = v => T + (hi - v) / (hi - lo) * (H - T - B);
   let s = "";
   for (let v = lo; v <= hi; v += 5) {
     s += `<line x1="${L}" y1="${Y(v)}" x2="${W - R}" y2="${Y(v)}" stroke="#eee"/>`
-       + `<text x="${L - 6}" y="${Y(v) + 4}" font-size="11" fill="#888" text-anchor="end">${v}</text>`;
+       + `<text x="${L - 4}" y="${Y(v) + 3}" font-size="9" fill="#888" text-anchor="end">${v}</text>`;
   }
   for (let d = new Date(x0); d <= new Date(x1); d.setMonth(d.getMonth() + 1, 1)) {
     if (+d < x0) continue;
     s += `<line x1="${X(+d)}" y1="${T}" x2="${X(+d)}" y2="${H - B}" stroke="#f3f3f3"/>`
-       + `<text x="${X(+d)}" y="${H - B + 14}" font-size="11" fill="#888" text-anchor="middle">${d.toLocaleString("en", { month: "short" }).toUpperCase()}</text>`;
+       + `<text x="${X(+d)}" y="${H - B + 12}" font-size="8" fill="#888" text-anchor="middle">${d.toLocaleString("en", { month: "short" }).toUpperCase()}</text>`;
   }
-  for (const p of PEOPLE) {
-    if (!p.weights.length) continue;
-    const pts = p.weights.map(w => [X(+D(w.date)), Y(w.lbs)]);
-    const last = p.weights[p.weights.length - 1];
-    s += `<line x1="${pts[pts.length - 1][0]}" y1="${pts[pts.length - 1][1]}" x2="${X(x1)}" y2="${Y(p.goal)}" stroke="${p.color}" stroke-dasharray="5,4" stroke-width="1.5" opacity="0.5"/>`;
-    if (pts.length > 1) s += `<polyline points="${pts.map(q => q.join(",")).join(" ")}" fill="none" stroke="${p.color}" stroke-width="2.5"/>`;
-    s += pts.map((q, i) => `<circle cx="${q[0]}" cy="${q[1]}" r="4" fill="${p.color}"><title>${p.name} ${fmt(p.weights[i].date)}: ${p.weights[i].lbs} lb</title></circle>`).join("");
-    s += `<text x="${X(x1) + 4}" y="${Y(p.goal) + 4}" font-size="13" fill="${p.color}" font-weight="bold">★ ${p.goal}</text>`;
-    s += `<text x="${pts[pts.length - 1][0] + 7}" y="${pts[pts.length - 1][1] - 8}" font-size="12" fill="${p.color}" font-weight="bold">${p.name} ${last.lbs}</text>`;
-  }
+  s += `<line x1="${L}" y1="${Y(p.goal)}" x2="${W - R}" y2="${Y(p.goal)}" stroke="${p.color}" stroke-dasharray="2,3" opacity="0.5"/>`
+     + `<text x="${W - R}" y="${Y(p.goal) - 4}" font-size="11" fill="${p.color}" font-weight="bold" text-anchor="end">&#9733; ${p.goal}</text>`;
+  const pts = p.weights.map(w => [X(+D(w.date)), Y(w.lbs)]);
+  const lastPt = pts[pts.length - 1], last = p.weights[p.weights.length - 1];
+  s += `<line x1="${lastPt[0]}" y1="${lastPt[1]}" x2="${X(x1)}" y2="${Y(p.goal)}" stroke="${p.color}" stroke-dasharray="5,4" stroke-width="1.5" opacity="0.5"/>`;
+  if (pts.length > 1) s += `<polyline points="${pts.map(q => q.join(",")).join(" ")}" fill="none" stroke="${p.color}" stroke-width="2.5"/>`;
+  s += pts.map((q, i) => `<circle cx="${q[0]}" cy="${q[1]}" r="4" fill="${p.color}"><title>${fmt(p.weights[i].date)}: ${p.weights[i].lbs} lb</title></circle>`).join("");
+  const anchor = lastPt[0] > W - 60 ? "end" : "start", dx = lastPt[0] > W - 60 ? -6 : 6;
+  s += `<text x="${lastPt[0] + dx}" y="${lastPt[1] - 8}" font-size="11" fill="${p.color}" font-weight="bold" text-anchor="${anchor}">${last.lbs}</text>`;
   s += `<line x1="${L}" y1="${H - B}" x2="${W - R}" y2="${H - B}" stroke="#999"/><line x1="${L}" y1="${T}" x2="${L}" y2="${H - B}" stroke="#999"/>`;
-  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}">${s}</svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}">${s}</svg>`;
 }
 
 /* ---------- scoreboard ---------- */
