@@ -80,7 +80,7 @@
     table.score { font-size: 0.68em; }
     table.score td, table.score th { padding: 4px 5px; }
   }
-  #chart svg { width: 100%; height: auto; background: #fff; border: 1px solid #000; }
+  #chart svg { width: 100%; height: auto; background: #fff; }
 </style>
 </head>
 <body>
@@ -205,7 +205,7 @@ function drawChart() {
 function panel(p, x0, x1) {
   const head = `<p style="margin:0 0 4px;text-align:center;font-family:'Courier New',monospace"><span class="${p.cls}">${p.name}</span> <span class="small">&rarr; ${p.goal} lb by 3/1</span></p>`;
   if (!p.weights.length) {
-    return head + `<div style="border:2px dashed #000;padding:44px 6px;text-align:center;color:#cc0000;font-family:'Courier New',monospace;font-weight:bold;font-size:0.75em">NO WEIGH-INS YET</div>`;
+    return head + `<div style="aspect-ratio:330/290;display:flex;align-items:center;justify-content:center;color:#cc0000;font-family:'Courier New',monospace;font-weight:bold;font-size:0.75em">NO WEIGH-INS YET</div>`;
   }
   const W = 330, H = 290, L = 34, R = 14, T = 14, B = 24;
   const lo = Math.floor(Math.min(...p.weights.map(w => w.lbs)) / 5) * 5 - 5;
@@ -241,7 +241,7 @@ function panel(p, x0, x1) {
   const anchor = lastPt[0] > W - 60 ? "end" : "start", dx = lastPt[0] > W - 60 ? -6 : 6;
   s += `<text x="${lastPt[0] + dx}" y="${lastPt[1] - 8}" font-size="11" fill="${p.color}" font-weight="bold" text-anchor="${anchor}">${last.lbs}</text>`;
   s += `<line x1="${L}" y1="${H - B}" x2="${W - R}" y2="${H - B}" stroke="#999"/><line x1="${L}" y1="${T}" x2="${L}" y2="${H - B}" stroke="#999"/>`;
-  return `<svg viewBox="0 0 ${W} ${H}">${s}</svg>`;
+  return head + `<svg viewBox="0 0 ${W} ${H}">${s}</svg>`;
 }
 
 /* ---------- scoreboard ---------- */
