@@ -84,6 +84,15 @@
   <h2>SCOREBOARD</h2>
   <div id="scoreboard"><i>loading…</i></div>
 
+  <h2>THE GRID — DID YOU EAT 2600?</h2>
+  <p class="legend">
+    <span class="cell" style="background:#2da44e"></span> hit 2600+ &nbsp;
+    <span class="cell" style="background:#d1242f"></span> logged, under &nbsp;
+    <span class="cell" style="background:#c9c9c9"></span> didn't log &nbsp;
+    <span class="cell" style="background:#fff;border:1px solid #ddd;width:11px;height:11px"></span> future
+  </p>
+  <div id="grid"><i>loading…</i></div>
+
   <h2>UPLOAD YOUR SLOP (NO LOGIN)</h2>
   <form id="upform" style="font-family:'Courier New',monospace">
     <p style="margin:6px 0">
@@ -173,7 +182,7 @@ Promise.all([
 ]).then(([lj, fj, lw, fw]) => {
   PEOPLE[0].days = lj.days || {}; PEOPLE[1].days = fj.days || {};
   PEOPLE[0].weights = parseWeightsCSV(lw); PEOPLE[1].weights = parseWeightsCSV(fw);
-  drawChart(); drawScoreboard();
+  drawChart(); drawScoreboard(); drawGrid();
 });
 
 /* ---------- weight charts (side by side) ---------- */
@@ -266,6 +275,39 @@ function drawScoreboard() {
     ${row("avg cals, last 7 days", q(a.avg7), q(b.avg7))}
     <tr class="winner"><th>who's winning</th><td colspan="2" style="text-align:center">${winner}</td></tr>
   </table>`;
+}
+
+/* ---------- calorie grid ---------- */
+function drawGrid() {
+  let html = "";
+  for (const p of PEOPLE) {
+    html += `<p style="margin:10px 0 3px"><span class="${p.cls}">${p.name}</span></p>`;
+    let cur = D(START);
+    const end = D(END);
+    let month = -1, line = "";
+    const lines = [];
+    while (cur <= end) {
+      if (cur.getMonth() !== month) {
+        if (line) lines.push(line);
+        month = cur.getMonth();
+        line = `<span class="mo">${cur.toLocaleString("en", { month: "short" }).toUpperCase()}</span>`;
+      }
+      const k = iso(cur);
+      const day = p.days[k];
+      let style = "background:#fff;border:1px solid #e5e5e5;width:11px;height:11px", t = k + ": the future";
+      if (k <= today) {
+        if (day) {
+          style = "background:" + (day.calories >= CAL_GOAL ? "#2da44e" : "#d1242f");
+          t = k + ": " + Math.round(day.calories) + " cal";
+        } else { style = "background:#c9c9c9"; t = k + ": no log"; }
+      }
+      line += `<span class="cell" style="${style}" title="${t}"></span>`;
+      cur.setDate(cur.getDate() + 1);
+    }
+    lines.push(line);
+    html += lines.map(l => `<div style="white-space:nowrap;overflow-x:auto">${l}</div>`).join("");
+  }
+  document.getElementById("grid").innerHTML = html;
 }
 
 /* ---------- csv upload ---------- */
