@@ -98,6 +98,9 @@
   </p>
   <div id="grid"><i>loading…</i></div>
 
+  <p style="margin:30px 0 2px;font-family:'Courier New',monospace"><b>RANDOM DAY OF SLOP</b> <a href="#" id="reroll">[ reroll ]</a></p>
+  <div id="randomday"><i>loading…</i></div>
+
   <form id="upform" style="font-family:'Courier New',monospace">
     <p style="margin:6px 0">
       WHO ARE YOU:
@@ -184,7 +187,7 @@ Promise.all([
 ]).then(([lj, fj, lw, fw]) => {
   PEOPLE[0].days = lj.days || {}; PEOPLE[1].days = fj.days || {};
   PEOPLE[0].weights = parseWeightsCSV(lw); PEOPLE[1].weights = parseWeightsCSV(fw);
-  drawChart(); drawScoreboard(); drawGrid();
+  drawChart(); drawScoreboard(); drawGrid(); drawRandomDay();
 });
 
 /* ---------- weight charts (side by side) ---------- */
@@ -311,6 +314,24 @@ function drawGrid() {
   }
   document.getElementById("grid").innerHTML = html;
 }
+
+/* ---------- random day of slop ---------- */
+function drawRandomDay() {
+  let html = "";
+  for (const p of PEOPLE) {
+    const dates = Object.keys(p.days);
+    if (!dates.length) {
+      html += `<p><span class="${p.cls}">${p.name}</span>: no food on record.</p>`;
+      continue;
+    }
+    const d = dates[Math.floor(Math.random() * dates.length)];
+    const day = p.days[d];
+    html += `<p style="margin:10px 0 4px"><span class="${p.cls}">${p.name}</span> on <b>${fmt(d)}</b> — ${Math.round(day.calories)} cal, ${Math.round(day.protein)}g protein:</p>
+    <table class="meals">${day.meals.map(m => `<tr><td>${m[0]}</td><td>${m[1]} cal</td><td>${m[2]}g pro</td></tr>`).join("")}</table>`;
+  }
+  document.getElementById("randomday").innerHTML = html;
+}
+document.getElementById("reroll").addEventListener("click", ev => { ev.preventDefault(); drawRandomDay(); });
 
 /* ---------- csv upload ---------- */
 const UPLOAD_URL = "https://bulkwatch-upload.loganvaleski.workers.dev";
