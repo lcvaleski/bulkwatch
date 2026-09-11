@@ -98,6 +98,21 @@
   <h2>LAST KNOWN MEALS</h2>
   <div id="lastmeals"><i>loading…</i></div>
 
+  <h2>UPLOAD YOUR SLOP (NO LOGIN)</h2>
+  <form id="upform" style="font-family:'Courier New',monospace">
+    <p style="margin:6px 0">
+      WHO ARE YOU:
+      <label><input type="radio" name="person" value="logan" required> <span class="logan">LOGAN</span></label>
+      <label><input type="radio" name="person" value="felix"> <span class="felix">FELIX</span></label>
+    </p>
+    <p style="margin:6px 0"><input type="file" name="file" accept=".csv"></p>
+    <p style="margin:6px 0">
+      <button type="submit" style="font-family:'Courier New',monospace;font-weight:bold;padding:3px 14px;border:2px outset #c0c0c0;background:#e0e0e0;cursor:pointer">TRANSMIT</button>
+      <span id="upstatus"></span>
+    </p>
+  </form>
+  <p class="small">mist CSV exports only. re-uploading overlapping dates is fine — newest wins.</p>
+
   <hr class="rainbow">
   <footer>
     you are visitor number <span class="counter" id="hits">000000</span><br>
@@ -297,6 +312,24 @@ function drawMeals() {
   }
   document.getElementById("lastmeals").innerHTML = html;
 }
+
+/* ---------- csv upload ---------- */
+const UPLOAD_URL = "https://bulkwatch-upload.loganvaleski.workers.dev";
+document.getElementById("upform").addEventListener("submit", async ev => {
+  ev.preventDefault();
+  const st = document.getElementById("upstatus");
+  const fd = new FormData(ev.target);
+  const f = fd.get("file");
+  if (!f || !f.name) { st.textContent = "pick a file first"; return; }
+  if (UPLOAD_URL.startsWith("__")) { st.textContent = "upload not wired up yet"; return; }
+  st.textContent = "TRANSMITTING…";
+  try {
+    const r = await fetch(UPLOAD_URL, { method: "POST", body: fd });
+    const j = await r.json().catch(() => ({}));
+    st.textContent = r.ok ? "✅ RECEIVED — site updates in ~2 min" : "❌ " + (j.error || r.status);
+    if (r.ok) ev.target.reset();
+  } catch (e) { st.textContent = "❌ upload failed (network)"; }
+});
 </script>
 </body>
 </html>
