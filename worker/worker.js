@@ -37,6 +37,30 @@ export default {
     const person = form.get("person");
     const file = form.get("file");
     if (!PEOPLE.includes(person)) return reply(req, 400, { error: "pick logan or felix" });
+
+    // manual weigh-in (with optional backfill date) instead of a file
+    const weight = form.get("weight");
+    if (weight !== null && weight !== "") {
+      const w = parseFloat(weight);
+      const date = form.get("date") || "";
+      if (!(w >= 80 && w <= 400)) return reply(req, 400, { error: "weight looks wrong (80-400 lb)" });
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return reply(req, 400, { error: "bad date" });
+      if (date > new Date().toISOString().slice(0, 10)) return reply(req, 400, { error: "no future weigh-ins" });
+      const csv = `date,type,entry,calories\n${date},weight,${w},\n`;
+      const path = `inbox/${person}/weight-${Date.now()}.csv`;
+      const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
+        method: "PUT",
+        headers: {
+          authorization: `Bearer ${env.GITHUB_TOKEN}`,
+          "user-agent": "bulkwatch-upload-worker",
+          accept: "application/vnd.github+json",
+        },
+        body: JSON.stringify({ message: `weigh-in for ${person}: ${w} lb on ${date}`, content: btoa(csv) }),
+      });
+      if (!r.ok) return reply(req, 502, { error: `github said ${r.status}` });
+      return reply(req, 200, { ok: true });
+    }
+
     if (!file || typeof file === "string") return reply(req, 400, { error: "no file attached" });
     if (file.size > MAX_BYTES) return reply(req, 400, { error: "file too big (2MB max)" });
 

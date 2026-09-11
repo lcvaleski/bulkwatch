@@ -34,6 +34,9 @@
     background: #000; color: #fff;
     padding: 4px 10px; margin: 30px 0 10px; letter-spacing: 1px;
   }
+  h2:first-child {
+    margin-top: 0;
+  }
   .rainbow {
     height: 5px; border: 0; margin: 18px 0 8px;
     background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, magenta);
@@ -74,12 +77,7 @@
 </head>
 <body>
 <div id="page">
-  <marquee scrollamount="6">★★★ BULKWATCH 2027 ★★★ TWO MEN ★★★ ONE SCALE ★★★ LOGAN → 170 ★★★ FELIX → 165 ★★★ DEADLINE MARCH 1 2027 ★★★ EAT OR BE NOTHING ★★★</marquee>
-  <h1>⚖️ BULKWATCH 2027</h1>
-  <p class="sub">the official <span class="logan">LOGAN</span> vs <span class="felix">FELIX</span> mass acquisition accountability page</p>
-  <p class="deadline"><b id="daysleft">?</b> DAYS UNTIL MARCH 1</p>
-
-  <h2>THE SCALE (CANONICAL, NO LYING)</h2>
+  <h2>THE SCALE (CANONICAL, NO LYING)<span style="float:right;color:#ff4444"><b id="daysleft">?</b> DAYS LEFT</span></h2>
   <div id="chart"><i>loading…</i></div>
   <p class="small">solid = actual weigh-ins · dashed = pace needed to hit goal by 3/1 · ★ = goal</p>
 
@@ -100,6 +98,24 @@
     </p>
   </form>
   <p class="small">mist CSV exports only. re-uploading overlapping dates is fine — newest wins.</p>
+
+  <h2>WEIGH IN (BACKFILL ALLOWED)</h2>
+  <form id="wform" style="font-family:'Courier New',monospace">
+    <p style="margin:6px 0">
+      WHO ARE YOU:
+      <label><input type="radio" name="person" value="logan" required> <span class="logan">LOGAN</span></label>
+      <label><input type="radio" name="person" value="felix"> <span class="felix">FELIX</span></label>
+    </p>
+    <p style="margin:6px 0">
+      <input type="number" name="weight" step="0.1" min="80" max="400" placeholder="152.5" required style="width:90px;font-family:'Courier New',monospace"> lb on
+      <input type="date" name="date" required style="font-family:'Courier New',monospace">
+    </p>
+    <p style="margin:6px 0">
+      <button type="submit" style="font-family:'Courier New',monospace;font-weight:bold;padding:3px 14px;border:2px outset #c0c0c0;background:#e0e0e0;cursor:pointer">TRANSMIT</button>
+      <span id="wstatus"></span>
+    </p>
+  </form>
+  <p class="small">same date twice = newest wins, so a bad entry is fixed by re-entering it.</p>
 
   <hr class="rainbow">
   <footer>
@@ -257,6 +273,18 @@ document.getElementById("upform").addEventListener("submit", async ev => {
     st.textContent = r.ok ? "✅ RECEIVED — site updates in ~2 min" : "❌ " + (j.error || r.status);
     if (r.ok) ev.target.reset();
   } catch (e) { st.textContent = "❌ upload failed (network)"; }
+});
+
+document.querySelector("#wform [name=date]").value = today;
+document.getElementById("wform").addEventListener("submit", async ev => {
+  ev.preventDefault();
+  const st = document.getElementById("wstatus");
+  st.textContent = "TRANSMITTING…";
+  try {
+    const r = await fetch(UPLOAD_URL, { method: "POST", body: new FormData(ev.target) });
+    const j = await r.json().catch(() => ({}));
+    st.textContent = r.ok ? "✅ LOGGED — site updates in ~2 min" : "❌ " + (j.error || r.status);
+  } catch (e) { st.textContent = "❌ failed (network)"; }
 });
 </script>
 </body>
