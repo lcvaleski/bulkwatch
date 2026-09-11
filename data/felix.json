@@ -1,3 +1,829 @@
 {
- "days": {}
+ "days": {
+  "2026-08-25": {
+   "calories": 2177.0,
+   "protein": 100.0,
+   "carbs": 221.0,
+   "fat": 91.0,
+   "meals": [
+    [
+     "Bacon egg and cheese on a everything bagel",
+     580,
+     29
+    ],
+    [
+     "Cortado",
+     10,
+     1
+    ],
+    [
+     "Two pieces of bread with some butter",
+     230,
+     6
+    ],
+    [
+     "Three corn tortillas fried in olive oil, 7oz of wild cod, coleslaw, lettuce, cilantro, salsa fish tacos",
+     837,
+     49
+    ],
+    [
+     "Purely Elizabeth granola and yogurt",
+     240,
+     9
+    ],
+    [
+     "Two pieces of toast with butter and jam",
+     280,
+     6
+    ]
+   ]
+  },
+  "2026-08-26": {
+   "calories": 1586.0,
+   "protein": 75.0,
+   "carbs": 141.6,
+   "fat": 80.9,
+   "meals": [
+    [
+     "100g purely Elizabeth granola 150g yogurt",
+     525,
+     15
+    ],
+    [
+     "365 Whole Foods Market Gruyere. 4 slice",
+     360,
+     28
+    ],
+    [
+     "365 Everyday Value, Whole Foods, Whole Foods Market Black forest ultra thin uncured ham, black forest. 8 slices",
+     112,
+     18
+    ],
+    [
+     "365 Whole Foods Market Organic Mayonnaise. 2 tbsp",
+     220,
+     0
+    ],
+    [
+     "Grey Poupon Dijon Mustard. 1.5 tbsp",
+     8,
+     0
+    ],
+    [
+     "Sourdough 4 slices",
+     320,
+     12
+    ],
+    [
+     "1/3 cucumber, 2 lettuce pieces, 1 heirloom tomato",
+     41,
+     2
+    ]
+   ]
+  },
+  "2026-08-29": {
+   "calories": 2375.0,
+   "protein": 116.8,
+   "carbs": 226.5,
+   "fat": 101.4,
+   "meals": [
+    [
+     "Half a plate of sesame chicken",
+     600,
+     25
+    ],
+    [
+     "Quarter plate of lamb curry",
+     300,
+     15
+    ],
+    [
+     "Rice",
+     205,
+     4
+    ],
+    [
+     "3 pieces of fried fish, beans, rice",
+     750,
+     46
+    ],
+    [
+     "3 Scrambled eggs and bacon, salad, toast 1 piece, potatoes",
+     520,
+     26
+    ]
+   ]
+  },
+  "2026-08-30": {
+   "calories": 2756.0,
+   "protein": 116.2,
+   "carbs": 284.4,
+   "fat": 135.4,
+   "meals": [
+    [
+     "Stonyfield Organic Vanilla Whole Milk Yogurt. 120g",
+     113,
+     4
+    ],
+    [
+     "Driscoll's Sweetest Batch Blueberries. 30 berries",
+     24,
+     0
+    ],
+    [
+     "Half & half. 1.5 tbsp",
+     26,
+     1
+    ],
+    [
+     "365 Whole Foods Market Light Amber Wildflower Honey. 1 tbsp",
+     60,
+     0
+    ],
+    [
+     "Half of a large chocolate croissant",
+     210,
+     4
+    ],
+    [
+     "Kind bar",
+     200,
+     6
+    ],
+    [
+     "Ham sandwich with three slices of Whole Foods cheese eight slices of Whole Foods ham two pieces of sourdough mayonnaise",
+     572,
+     36
+    ],
+    [
+     "Flat white 8oz",
+     190,
+     13
+    ],
+    [
+     "Annie's, Annie's Homegrown Organic Grass Fed Shells & White Cheddar Macaroni & Cheese. Half box as prepared",
+     337,
+     12
+    ],
+    [
+     "Shawarma plate small",
+     750,
+     35
+    ],
+    [
+     "Ice cream 2 scoops",
+     274,
+     5
+    ]
+   ]
+  },
+  "2026-08-31": {
+   "calories": 1401.0,
+   "protein": 87.0,
+   "carbs": 85.0,
+   "fat": 76.0,
+   "meals": [
+    [
+     "3 sausage breakfast patty\u2019s",
+     255,
+     9
+    ],
+    [
+     "Cappuccino",
+     120,
+     6
+    ],
+    [
+     "3 egg scramble",
+     216,
+     18
+    ],
+    [
+     "Chipotle bowl with white rice, black beans, chicken fajitas, pico de gallo, sour cream cheese, and lettuce",
+     810,
+     54
+    ]
+   ]
+  },
+  "2026-09-01": {
+   "calories": 2233.0,
+   "protein": 51.4,
+   "carbs": 325.5,
+   "fat": 68.0,
+   "meals": [
+    [
+     "Tim Hortons small coffee with cream",
+     80,
+     2
+    ],
+    [
+     "Tim Hortons bagel with cream cheese",
+     350,
+     9
+    ],
+    [
+     "Half a tall can of Arizona iced tea",
+     100,
+     0
+    ],
+    [
+     "Org. Tart Cherry Santa Cruz Lemonade. 2 cup",
+     200,
+     0
+    ],
+    [
+     "Entire Box of white cheddar Annie\u2019s Mac and Cheese with some broccoli",
+     659,
+     25
+    ],
+    [
+     "Glass of wine",
+     125,
+     0
+    ],
+    [
+     "1.5 packs of Murachan ramen, 1 tbsp mayonnaise, 1 egg yolk",
+     719,
+     15
+    ]
+   ]
+  },
+  "2026-09-02": {
+   "calories": 2979.0,
+   "protein": 118.1,
+   "carbs": 387.1,
+   "fat": 111.4,
+   "meals": [
+    [
+     "One Degree Organic Foods Classic Granola. 95g",
+     443,
+     10
+    ],
+    [
+     "KIRKLAND Signature Greek Yogourt. 180g",
+     103,
+     18
+    ],
+    [
+     "75g blueberries",
+     43,
+     1
+    ],
+    [
+     "8oz black coffee",
+     2,
+     0
+    ],
+    [
+     "8oz earl grey with sugar and milk",
+     35,
+     1
+    ],
+    [
+     "cardamom chai. 1 portion / packet",
+     88,
+     3
+    ],
+    [
+     "Annie's spirals with butter and parmesan. 1 box with broccoli and 2 tbsp butter and 2 tbsp milk",
+     793,
+     24
+    ],
+    [
+     "Gordon hot chocolate",
+     120,
+     1
+    ],
+    [
+     "1 Costco bagel",
+     300,
+     11
+    ],
+    [
+     "4 eggs fried in butter",
+     346,
+     25
+    ],
+    [
+     "1 tbsp butter",
+     102,
+     0
+    ],
+    [
+     "1 baby cucumber",
+     8,
+     0
+    ],
+    [
+     "4 cherry tomato",
+     12,
+     1
+    ],
+    [
+     "Kirkland Cheddar Coastal. 40g",
+     160,
+     11
+    ],
+    [
+     "75g Honey Nut Cheerios, 1 cup of milk, handful of blueberries",
+     424,
+     14
+    ]
+   ]
+  },
+  "2026-09-03": {
+   "calories": 3780.0,
+   "protein": 86.4,
+   "carbs": 391.8,
+   "fat": 138.0,
+   "meals": [
+    [
+     "One Degree Organic Foods Classic Granola. 120g",
+     560,
+     12
+    ],
+    [
+     "Handful blueberries",
+     24,
+     0
+    ],
+    [
+     "1 cup of whole milk",
+     149,
+     8
+    ],
+    [
+     "Sausage Farmers wrap from Tim Horton",
+     640,
+     21
+    ],
+    [
+     "4 potstickers",
+     320,
+     12
+    ],
+    [
+     "A little bit of nachos",
+     350,
+     9
+    ],
+    [
+     "Spicy McChicken",
+     390,
+     14
+    ],
+    [
+     "Medium fries McDonalds",
+     320,
+     5
+    ],
+    [
+     "1 tall boy corona beer",
+     296,
+     2
+    ],
+    [
+     "3 lagers at a bar",
+     450,
+     3
+    ],
+    [
+     "1 vodka soda",
+     96,
+     0
+    ],
+    [
+     "1 rum and coke",
+     185,
+     0
+    ]
+   ]
+  },
+  "2026-09-04": {
+   "calories": 2945.0,
+   "protein": 94.8,
+   "carbs": 317.3,
+   "fat": 148.0,
+   "meals": [
+    [
+     "Sausage Farmers wrap from Tim Horton",
+     640,
+     21
+    ],
+    [
+     "Medium iced coffee Tim Horton",
+     160,
+     2
+    ],
+    [
+     "SUNSET Mini Cucumbers. 1",
+     8,
+     0
+    ],
+    [
+     "Siwin Pork & Vegetable Potstickers. 1 package",
+     900,
+     40
+    ],
+    [
+     "cardamom chai. 1 portion / packet",
+     88,
+     3
+    ],
+    [
+     "Brew Dr. Island Mango Kombucha. 1 bottle",
+     80,
+     0
+    ],
+    [
+     "Ichiban ramen packet",
+     470,
+     9
+    ],
+    [
+     "Half egg yolk",
+     28,
+     1
+    ],
+    [
+     "Half tbsp mayonnaise",
+     47,
+     0
+    ],
+    [
+     "5 Jane\u2019s chicken fingers",
+     400,
+     18
+    ],
+    [
+     "1 tbsp mayonnaise",
+     94,
+     0
+    ],
+    [
+     "Kinder's Original BBQ Sauce. 1 tbsp",
+     30,
+     0
+    ]
+   ]
+  },
+  "2026-09-05": {
+   "calories": 2321.0,
+   "protein": 78.3,
+   "carbs": 323.2,
+   "fat": 87.9,
+   "meals": [
+    [
+     "Nescaf\u00e9 instant coffee one cup",
+     4,
+     0
+    ],
+    [
+     "cardamom chai. 1 portion / packet",
+     88,
+     3
+    ],
+    [
+     "Costco everything bagel with 1 tablespoon of butter and 2 tablespoons of crofter\u2019s peach jam",
+     512,
+     12
+    ],
+    [
+     "natures touch Cerises douces fonc\u00e9es. 100g, KIRKLAND Signature Greek Yogourt. 100g, Great Value Homogenous Milk. 250ml, Adam\u2019s Peanut butter. 60g, 100g fresh banana, Naturoney Organic Honey. 1 tbsp",
+     810,
+     37
+    ],
+    [
+     "Entire Box of white cheddar Annie\u2019s Mac and Cheese with some broccoli",
+     684,
+     25
+    ],
+    [
+     "2 tbsp butter, 2 tbsp whole milk",
+     223,
+     1
+    ]
+   ]
+  },
+  "2026-09-06": {
+   "calories": 2510.0,
+   "protein": 91.7,
+   "carbs": 283.3,
+   "fat": 105.9,
+   "meals": [
+    [
+     "Miss Vickie's Sea Salt & Malt Vinegar Potato Chips. 50g",
+     260,
+     3
+    ],
+    [
+     "One Degree Organic Foods Classic Granola. 120g",
+     560,
+     12
+    ],
+    [
+     "1 cup whole milk",
+     149,
+     8
+    ],
+    [
+     "Handful blueberries",
+     24,
+     0
+    ],
+    [
+     "cardamom chai. 1 portion / packet",
+     88,
+     3
+    ],
+    [
+     "2 chicken thighs roasted in olive oil",
+     458,
+     41
+    ],
+    [
+     "1 bell pepper roasted in olive oil",
+     71,
+     1
+    ],
+    [
+     "Junior mcchicken",
+     380,
+     13
+    ],
+    [
+     "Ice cream cone McDonald\u2019s",
+     200,
+     5
+    ],
+    [
+     "Western Family Long grain white rice. 0.5 cups. You are not counting this right. Serving size is 160 cals per 1/4 cup, I am saying 1/2 cup",
+     320,
+     6
+    ]
+   ]
+  },
+  "2026-09-07": {
+   "calories": 3489.0,
+   "protein": 143.6,
+   "carbs": 262.6,
+   "fat": 143.0,
+   "meals": [
+    [
+     "4 eggs fried in butter",
+     346,
+     25
+    ],
+    [
+     "2 slices of sourdough with butter",
+     320,
+     7
+    ],
+    [
+     "Kirkland Cheddar Coastal. 40g",
+     160,
+     11
+    ],
+    [
+     "55g Honey Nut Cheerios, 1 cup of milk, handful of blueberries",
+     356,
+     13
+    ],
+    [
+     "Western Family Long grain white rice. 0.5 cups. You are not counting this right. Serving size is 160 cals per 1/4 cup, I am saying 1/2 cup",
+     320,
+     6
+    ],
+    [
+     "2 chicken thighs roasted in olive oil",
+     458,
+     41
+    ],
+    [
+     "Burger King whopper",
+     678,
+     31
+    ],
+    [
+     "Jack links, beef jerky stick",
+     100,
+     6
+    ],
+    [
+     "Half bottle of wine",
+     313,
+     0
+    ],
+    [
+     "21 oz Guinness",
+     219,
+     2
+    ],
+    [
+     "21 oz Guinness",
+     219,
+     2
+    ]
+   ]
+  },
+  "2026-09-08": {
+   "calories": 3135.0,
+   "protein": 153.5,
+   "carbs": 312.6,
+   "fat": 142.2,
+   "meals": [
+    [
+     "Medium Tim Hortons, coffee with cream",
+     70,
+     1
+    ],
+    [
+     "Sausage, farmers wrap, Tim Hortons",
+     640,
+     21
+    ],
+    [
+     "Miss Vickie's Sea Salt & Malt Vinegar Potato Chips. 50g",
+     260,
+     3
+    ],
+    [
+     "450g ground beef and bean chili",
+     765,
+     58
+    ],
+    [
+     "1/2 cup uncooked white long grain rice",
+     320,
+     6
+    ],
+    [
+     "Chipotle bowl with white rice, black beans, chicken, fajitas, pico de gallo, sour cream, cheese, lettuce",
+     800,
+     61
+    ],
+    [
+     "Miss Vickie's Sea Salt & Malt Vinegar Potato Chips. 50g",
+     260,
+     3
+    ],
+    [
+     "Kirkland Signature Sour Cream. 1 tbsp",
+     20,
+     0
+    ]
+   ]
+  },
+  "2026-09-09": {
+   "calories": 3199.0,
+   "protein": 163.7,
+   "carbs": 325.0,
+   "fat": 123.1,
+   "meals": [
+    [
+     "One Degree Organic Foods Classic Granola. 120g",
+     560,
+     12
+    ],
+    [
+     "Handful blueberries",
+     24,
+     0
+    ],
+    [
+     "1 cup of whole milk",
+     149,
+     8
+    ],
+    [
+     "Miss Vickie's Jalape\u00f1o Kettle Cooked Potato Chips. 50g",
+     260,
+     4
+    ],
+    [
+     "16 ounces of coffee with cream",
+     70,
+     2
+    ],
+    [
+     "450g ground beef and bean chili",
+     765,
+     58
+    ],
+    [
+     "1/2 cup uncooked white long grain rice",
+     320,
+     6
+    ],
+    [
+     "21oz pilsner",
+     210,
+     2
+    ],
+    [
+     "133g oceans canned tuna dry",
+     154,
+     33
+    ],
+    [
+     "1 stick celery",
+     10,
+     0
+    ],
+    [
+     "Kirkland Cheddar Coastal. 50g",
+     200,
+     13
+    ],
+    [
+     "Compliments Natural Black Forest Ham. Five slices",
+     75,
+     14
+    ],
+    [
+     "1 Costco bagel",
+     300,
+     11
+    ],
+    [
+     "1 tbsp butter",
+     102,
+     0
+    ]
+   ]
+  },
+  "2026-09-10": {
+   "calories": 3854.0,
+   "protein": 146.7,
+   "carbs": 449.5,
+   "fat": 163.7,
+   "meals": [
+    [
+     "Orange cardamom morning bun",
+     420,
+     7
+    ],
+    [
+     "Coffee with cream",
+     70,
+     2
+    ],
+    [
+     "cardamom chai. 1 portion / packet",
+     88,
+     3
+    ],
+    [
+     "One Degree Organic Foods Classic Granola. 100g",
+     467,
+     10
+    ],
+    [
+     "0.5 cup whole milk",
+     75,
+     4
+    ],
+    [
+     "Handful blueberries",
+     24,
+     0
+    ],
+    [
+     "450g ground beef and bean chili",
+     765,
+     58
+    ],
+    [
+     "1/2 cup uncooked white long grain rice",
+     320,
+     6
+    ],
+    [
+     "Kirkland Signature Sour Cream. 1 tbsp",
+     20,
+     0
+    ],
+    [
+     "Kirkland Frozen strawberries. 120g",
+     43,
+     1
+    ],
+    [
+     "Kirkland Frozen strawberries. 120g, KIRKLAND Signature Greek Yogourt. 100g, Great Value Homogenous Milk. 250ml, Adam\u2019s Peanut butter. 60g, 100g fresh banana, Naturoney Organic Honey. 1 tbsp",
+     832,
+     43
+    ],
+    [
+     "Miss Vickie's Jalape\u00f1o Kettle Cooked Potato Chips. 50g",
+     260,
+     4
+    ],
+    [
+     "Ichiban ramen packet",
+     470,
+     9
+    ]
+   ]
+  }
+ }
 }
