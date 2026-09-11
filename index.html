@@ -86,18 +86,6 @@
   <h2>SCOREBOARD</h2>
   <div id="scoreboard"><i>loading…</i></div>
 
-  <h2>THE GRID — DID YOU EAT 2600?</h2>
-  <p class="legend">
-    <span class="cell" style="background:#2da44e"></span> hit 2600+ &nbsp;
-    <span class="cell" style="background:#d1242f"></span> logged, under &nbsp;
-    <span class="cell" style="background:#c9c9c9"></span> didn't log &nbsp;
-    <span class="cell" style="background:#fff;border:1px solid #ddd;width:11px;height:11px"></span> future
-  </p>
-  <div id="grid"><i>loading…</i></div>
-
-  <h2>LAST KNOWN MEALS</h2>
-  <div id="lastmeals"><i>loading…</i></div>
-
   <h2>UPLOAD YOUR SLOP (NO LOGIN)</h2>
   <form id="upform" style="font-family:'Courier New',monospace">
     <p style="margin:6px 0">
@@ -169,7 +157,7 @@ Promise.all([
 ]).then(([lj, fj, lw, fw]) => {
   PEOPLE[0].days = lj.days || {}; PEOPLE[1].days = fj.days || {};
   PEOPLE[0].weights = parseWeightsCSV(lw); PEOPLE[1].weights = parseWeightsCSV(fw);
-  drawChart(); drawScoreboard(); drawGrid(); drawMeals();
+  drawChart(); drawScoreboard();
 });
 
 /* ---------- weight charts (side by side) ---------- */
@@ -221,23 +209,12 @@ function stats(p) {
   const cur = w.length ? w[w.length - 1].lbs : null;
   const start = w.length ? w[0].lbs : null;
   const daysLeft = Math.max(1, daysBetween(today, END));
-  const challengeDays = Object.keys(p.days).filter(d => d >= START && d <= today);
-  const hits = challengeDays.filter(d => p.days[d].calories >= CAL_GOAL).length;
-  let streak = 0;
-  for (let d = D(today); ; d.setDate(d.getDate() - 1)) {
-    const k = iso(d);
-    if (p.days[k] && p.days[k].calories >= CAL_GOAL) streak++;
-    else if (k === today) continue; // today doesn't break the streak (day's not over)
-    else break;
-  }
   const week = [...Array(7)].map((_, i) => { const d = D(today); d.setDate(d.getDate() - 1 - i); return p.days[iso(d)]; }).filter(Boolean);
   return {
     cur, start,
     togo: cur !== null ? Math.max(0, p.goal - cur) : null,
     pace: cur !== null ? ((p.goal - cur) / daysLeft * 7) : null,
     pct: cur !== null && start !== null && p.goal !== start ? (cur - start) / (p.goal - start) * 100 : null,
-    lastDate: w.length ? w[w.length - 1].date : null,
-    hits, logged: challengeDays.length, streak,
     avg7: week.length ? Math.round(week.reduce((a, d) => a + d.calories, 0) / week.length) : null,
   };
 }
@@ -259,62 +236,9 @@ function drawScoreboard() {
     ${row("lbs to go", q(a.togo), q(b.togo))}
     ${row("pace needed", q(a.pace, " lb/wk"), q(b.pace, " lb/wk"))}
     ${row("gap closed", a.pct === null ? "—" : Math.round(Math.max(0, a.pct)) + "%", b.pct === null ? "—" : Math.round(Math.max(0, b.pct)) + "%")}
-    ${row("last weigh-in", a.lastDate ? fmt(a.lastDate) : "never", b.lastDate ? fmt(b.lastDate) : "never")}
-    ${row("2600+ days since 9/1", a.hits + " of " + a.logged + " logged", b.hits + " of " + b.logged + " logged")}
-    ${row("current streak", a.streak + " day" + (a.streak === 1 ? "" : "s"), b.streak + " day" + (b.streak === 1 ? "" : "s"))}
     ${row("avg cals, last 7 days", q(a.avg7), q(b.avg7))}
     <tr class="winner"><th>who's winning</th><td colspan="2" style="text-align:center">${winner}</td></tr>
   </table>`;
-}
-
-/* ---------- calorie grid ---------- */
-function drawGrid() {
-  let html = "";
-  for (const p of PEOPLE) {
-    html += `<p style="margin:10px 0 3px"><span class="${p.cls}">${p.name}</span></p>`;
-    let cur = D(START);
-    const end = D(END);
-    let month = -1, line = "";
-    const lines = [];
-    while (cur <= end) {
-      if (cur.getMonth() !== month) {
-        if (line) lines.push(line);
-        month = cur.getMonth();
-        line = `<span class="mo">${cur.toLocaleString("en", { month: "short" }).toUpperCase()}</span>`;
-      }
-      const k = iso(cur);
-      const day = p.days[k];
-      let style = "background:#fff;border:1px solid #e5e5e5;width:11px;height:11px", t = k + ": the future";
-      if (k <= today) {
-        if (day) {
-          style = "background:" + (day.calories >= CAL_GOAL ? "#2da44e" : "#d1242f");
-          t = k + ": " + Math.round(day.calories) + " cal";
-        } else { style = "background:#c9c9c9"; t = k + ": no log"; }
-      }
-      line += `<span class="cell" style="${style}" title="${t}"></span>`;
-      cur.setDate(cur.getDate() + 1);
-    }
-    lines.push(line);
-    html += lines.map(l => `<div style="white-space:nowrap;overflow-x:auto">${l}</div>`).join("");
-  }
-  document.getElementById("grid").innerHTML = html;
-}
-
-/* ---------- last meals ---------- */
-function drawMeals() {
-  let html = "";
-  for (const p of PEOPLE) {
-    const dates = Object.keys(p.days).sort();
-    if (!dates.length) {
-      html += `<p><span class="${p.cls}">${p.name}</span>: has never eaten food. UPLOAD A CSV!</p>`;
-      continue;
-    }
-    const d = dates[dates.length - 1];
-    const day = p.days[d];
-    html += `<p style="margin:12px 0 4px"><span class="${p.cls}">${p.name}</span> — ${fmt(d)}: <b>${Math.round(day.calories)} cal</b>, ${Math.round(day.protein)}g protein ${day.calories >= CAL_GOAL ? "✅" : "❌ UNDER 2600, WEAK"}</p>
-    <table class="meals">${day.meals.map(m => `<tr><td>${m[0]}</td><td>${m[1]} cal</td><td>${m[2]}g pro</td></tr>`).join("")}</table>`;
-  }
-  document.getElementById("lastmeals").innerHTML = html;
 }
 
 /* ---------- csv upload ---------- */
