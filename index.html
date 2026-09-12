@@ -86,12 +86,15 @@
 <body>
 <div id="page">
   <div id="chart"><i>loading…</i></div>
-  <p class="small">solid = actual weigh-ins · dashed = pace needed to hit goal by 3/1 · ★ = goal</p>
+  <p class="small">faint dots = raw weigh-ins · solid = 7-day trend · dashed = pace needed by 3/1 · ★ = goal</p>
+
+  <p style="margin:26px 0 2px;font-family:'Courier New',monospace"><b>THE RACE TO 100%</b> <span class="small">(gap closed — first to their goal wins)</span></p>
+  <div id="race"></div>
 
   <div id="scoreboard"><i>loading…</i></div>
 
   <p class="legend">
-    <span class="cell" style="background:#2da44e"></span> hit 2600+ &nbsp;
+    <span class="cell" style="background:#2da44e"></span> hit cal goal &nbsp;
     <span class="cell" style="background:#d1242f"></span> logged, under &nbsp;
     <span class="cell" style="background:#c9c9c9"></span> didn't log &nbsp;
     <span class="cell" style="background:#fff;border:1px solid #ddd;width:11px;height:11px"></span> future
@@ -143,12 +146,11 @@
 
 <script>
 "use strict";
-const CAL_GOAL = 2600;
 const START = "2026-09-01";
 const END = "2027-03-01";
 const PEOPLE = [
-  { key: "logan", name: "LOGAN", goal: 170, color: "#0000cc", cls: "logan" },
-  { key: "felix", name: "FELIX", goal: 165, color: "#cc0000", cls: "felix" },
+  { key: "logan", name: "LOGAN", goal: 170, calGoal: 2600, color: "#0000cc", cls: "logan" },
+  { key: "felix", name: "FELIX", goal: 165, calGoal: 3400, color: "#cc0000", cls: "felix" },
 ];
 
 const D = s => new Date(s + "T00:00:00");
@@ -187,8 +189,32 @@ Promise.all([
 ]).then(([lj, fj, lw, fw]) => {
   PEOPLE[0].days = lj.days || {}; PEOPLE[1].days = fj.days || {};
   PEOPLE[0].weights = parseWeightsCSV(lw); PEOPLE[1].weights = parseWeightsCSV(fw);
-  drawChart(); drawScoreboard(); drawGrid(); drawRandomDay();
+  drawChart(); drawRace(); drawScoreboard(); drawGrid(); drawRandomDay();
 });
+
+// least-squares trend over the last 14 days of weigh-ins (needs >= 2 points)
+function trend(weights) {
+  if (weights.length < 2) return null;
+  const lastT = +D(weights[weights.length - 1].date);
+  let pts = weights.filter(w => lastT - +D(w.date) <= 14 * DAY);
+  if (pts.length < 2) pts = weights.slice(-2);
+  const xs = pts.map(w => +D(w.date) / DAY), ys = pts.map(w => w.lbs);
+  const n = xs.length, sx = xs.reduce((a, b) => a + b), sy = ys.reduce((a, b) => a + b);
+  const sxx = xs.reduce((a, b) => a + b * b, 0), sxy = xs.reduce((a, x, i) => a + x * ys[i], 0);
+  const den = n * sxx - sx * sx;
+  if (!den) return null;
+  const slope = (n * sxy - sx * sy) / den, icpt = (sy - slope * sx) / n;
+  return { slope, at: t => icpt + slope * (t / DAY) };
+}
+
+// trailing 7-day rolling average of weigh-ins
+function rolling(weights) {
+  return weights.map(w => {
+    const t = +D(w.date);
+    const win = weights.filter(v => t - +D(v.date) <= 6 * DAY && +D(v.date) <= t);
+    return { date: w.date, lbs: win.reduce((a, v) => a + v.lbs, 0) / win.length };
+  });
+}
 
 /* ---------- weight charts (side by side) ---------- */
 function drawChart() {
@@ -203,7 +229,13 @@ function drawChart() {
 }
 
 function panel(p, x0, x1) {
-  const head = `<p style="margin:0 0 4px;text-align:center;font-family:'Courier New',monospace"><span class="${p.cls}">${p.name}</span> <span class="small">&rarr; ${p.goal} lb by 3/1</span></p>`;
+  const staleDays = p.weights.length ? daysBetween(p.weights[p.weights.length - 1].date, today) : null;
+  const staleTxt = staleDays === null ? '<span style="color:#d1242f">has never weighed in</span>'
+    : staleDays === 0 ? '<span style="color:#888">weighed in today</span>'
+    : staleDays < 3 ? `<span style="color:#888">last weigh-in ${staleDays} day${staleDays > 1 ? "s" : ""} ago</span>`
+    : `<span style="color:#d1242f;font-weight:bold">last weigh-in ${staleDays} days ago!!</span>`;
+  const head = `<p style="margin:0 0 2px;text-align:center;font-family:'Courier New',monospace"><span class="${p.cls}">${p.name}</span> <span class="small">&rarr; ${p.goal} lb by 3/1</span></p>
+    <p class="small" style="margin:0 0 4px;text-align:center;font-family:'Courier New',monospace;font-size:0.7em">${staleTxt}</p>`;
   if (!p.weights.length) {
     return head + `<div style="aspect-ratio:330/290;display:flex;align-items:center;justify-content:center;color:#cc0000;font-family:'Courier New',monospace;font-weight:bold;font-size:0.75em">NO WEIGH-INS YET</div>`;
   }
@@ -233,15 +265,60 @@ function panel(p, x0, x1) {
   }
   s += `<line x1="${L}" y1="${Y(p.goal)}" x2="${W - R}" y2="${Y(p.goal)}" stroke="${p.color}" stroke-dasharray="2,3" opacity="0.5"/>`
      + `<text x="${W - R}" y="${Y(p.goal) - 4}" font-size="11" fill="${p.color}" font-weight="bold" text-anchor="end">&#9733; ${p.goal}</text>`;
-  const pts = p.weights.map(w => [X(+D(w.date)), Y(w.lbs)]);
-  const lastPt = pts[pts.length - 1], last = p.weights[p.weights.length - 1];
+  const smooth = rolling(p.weights);
+  const raw = p.weights.map(w => [X(+D(w.date)), Y(w.lbs)]);
+  const pts = smooth.map(w => [X(+D(w.date)), Y(w.lbs)]);
+  const lastPt = pts[pts.length - 1], last = smooth[smooth.length - 1];
   s += `<line x1="${lastPt[0]}" y1="${lastPt[1]}" x2="${X(+D(END))}" y2="${Y(p.goal)}" stroke="${p.color}" stroke-dasharray="5,4" stroke-width="1.5" opacity="0.5"/>`;
+  s += raw.map((q, i) => `<circle cx="${q[0]}" cy="${q[1]}" r="3" fill="${p.color}" opacity="0.3"><title>${fmt(p.weights[i].date)}: ${p.weights[i].lbs} lb</title></circle>`).join("");
   if (pts.length > 1) s += `<polyline points="${pts.map(q => q.join(",")).join(" ")}" fill="none" stroke="${p.color}" stroke-width="2.5"/>`;
-  s += pts.map((q, i) => `<circle cx="${q[0]}" cy="${q[1]}" r="4" fill="${p.color}"><title>${fmt(p.weights[i].date)}: ${p.weights[i].lbs} lb</title></circle>`).join("");
+  s += `<circle cx="${lastPt[0]}" cy="${lastPt[1]}" r="4" fill="${p.color}"/>`;
   const anchor = lastPt[0] > W - 60 ? "end" : "start", dx = lastPt[0] > W - 60 ? -6 : 6;
-  s += `<text x="${lastPt[0] + dx}" y="${lastPt[1] - 8}" font-size="11" fill="${p.color}" font-weight="bold" text-anchor="${anchor}">${last.lbs}</text>`;
+  s += `<text x="${lastPt[0] + dx}" y="${lastPt[1] - 8}" font-size="11" fill="${p.color}" font-weight="bold" text-anchor="${anchor}">${(Math.round(last.lbs * 10) / 10)}</text>`;
   s += `<line x1="${L}" y1="${H - B}" x2="${W - R}" y2="${H - B}" stroke="#999"/><line x1="${L}" y1="${T}" x2="${L}" y2="${H - B}" stroke="#999"/>`;
   return head + `<svg viewBox="0 0 ${W} ${H}">${s}</svg>`;
+}
+
+/* ---------- race chart ---------- */
+function drawRace() {
+  const el = document.getElementById("race");
+  const racers = PEOPLE.filter(p => p.weights.length && p.goal !== p.weights[0].lbs);
+  if (!racers.length) {
+    el.innerHTML = '<p class="small" style="color:#888;font-family:\'Courier New\',monospace">race begins at first weigh-in</p>';
+    return;
+  }
+  const W = 680, H = 200, L = 40, R = 60, T = 12, B = 22;
+  const x0 = Math.min(...racers.map(p => +D(p.weights[0].date)));
+  const x1 = +D(END);
+  const series = racers.map(p => ({
+    p,
+    pts: rolling(p.weights).map(w => [+D(w.date), (w.lbs - p.weights[0].lbs) / (p.goal - p.weights[0].lbs) * 100]),
+  }));
+  let ymin = Math.min(0, ...series.flatMap(sr => sr.pts.map(q => q[1])));
+  ymin = Math.floor(ymin / 10) * 10 - 5;
+  const ymax = 105;
+  const X = t => L + (t - x0) / (x1 - x0) * (W - L - R);
+  const Y = v => T + (ymax - v) / (ymax - ymin) * (H - T - B);
+  let s = "";
+  for (let v = 0; v <= 100; v += 25) {
+    s += `<line x1="${L}" y1="${Y(v)}" x2="${W - R}" y2="${Y(v)}" stroke="${v === 100 ? "#ccc" : "#eee"}"/>`
+       + `<text x="${L - 4}" y="${Y(v) + 3}" font-size="9" fill="#888" text-anchor="end">${v}%</text>`;
+  }
+  for (let d = new Date(x0); d <= new Date(x1); d.setMonth(d.getMonth() + 1, 1)) {
+    if (+d < x0) continue;
+    if (X(+d) > L + 20) s += `<text x="${X(+d)}" y="${H - B + 12}" font-size="8" fill="#888" text-anchor="middle">${d.toLocaleString("en", { month: "short" }).toUpperCase()}</text>`;
+  }
+  s += `<line x1="${X(x0)}" y1="${Y(0)}" x2="${X(x1)}" y2="${Y(100)}" stroke="#999" stroke-dasharray="4,4"/>`
+     + `<text x="${W - R + 4}" y="${Y(100) + 3}" font-size="10" fill="#555">&#127937; 3/1</text>`;
+  for (const { p, pts } of series) {
+    const xy = pts.map(q => [X(q[0]), Y(q[1])]);
+    if (xy.length > 1) s += `<polyline points="${xy.map(q => q.join(",")).join(" ")}" fill="none" stroke="${p.color}" stroke-width="2.5"/>`;
+    const lastXY = xy[xy.length - 1], lastPct = pts[pts.length - 1][1];
+    s += `<circle cx="${lastXY[0]}" cy="${lastXY[1]}" r="4" fill="${p.color}"/>`
+       + `<text x="${lastXY[0] + 6}" y="${lastXY[1] + 3}" font-size="10" fill="${p.color}" font-weight="bold">${p.name} ${Math.round(lastPct)}%</text>`;
+  }
+  s += `<line x1="${L}" y1="${H - B}" x2="${W - R}" y2="${H - B}" stroke="#999"/><line x1="${L}" y1="${T}" x2="${L}" y2="${H - B}" stroke="#999"/>`;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;background:#fff">${s}</svg>`;
 }
 
 /* ---------- scoreboard ---------- */
@@ -251,13 +328,29 @@ function stats(p) {
   const start = w.length ? w[0].lbs : null;
   const daysLeft = Math.max(1, daysBetween(today, END));
   const week = [...Array(7)].map((_, i) => { const d = D(today); d.setDate(d.getDate() - 1 - i); return p.days[iso(d)]; }).filter(Boolean);
+  const tr = trend(w);
+  const trendCur = w.length ? rolling(w)[w.length - 1].lbs : null;
   return {
+    actual: tr ? tr.slope * 7 : null,
+    proj: tr ? tr.at(+D(END)) : null,
     cur, start,
     togo: cur !== null ? Math.max(0, p.goal - cur) : null,
     pace: cur !== null ? ((p.goal - cur) / daysLeft * 7) : null,
-    pct: cur !== null && start !== null && p.goal !== start ? (cur - start) / (p.goal - start) * 100 : null,
+    pct: trendCur !== null && start !== null && p.goal !== start ? (trendCur - start) / (p.goal - start) * 100 : null,
     avg7: week.length ? Math.round(week.reduce((a, d) => a + d.calories, 0) / week.length) : null,
   };
+}
+
+function paceCell(st) {
+  if (st.actual === null) return "—";
+  const good = st.pace !== null && st.actual >= st.pace;
+  const c = good ? "#2da44e" : "#d1242f";
+  return `<span style="color:${c}">${st.actual >= 0 ? "+" : ""}${st.actual.toFixed(1)} lb/wk</span>`;
+}
+function projCell(st, p) {
+  if (st.proj === null) return "—";
+  const v = Math.round(st.proj * 10) / 10;
+  return v >= p.goal ? `${v} &#9733;` : `<span style="color:#d1242f">${v} &#128128;</span>`;
 }
 
 function drawScoreboard() {
@@ -276,9 +369,11 @@ function drawScoreboard() {
     ${row("goal", "170 lb", "165 lb")}
     ${row("lbs to go", q(a.togo), q(b.togo))}
     ${row("pace needed", q(a.pace, " lb/wk"), q(b.pace, " lb/wk"))}
-    ${row("gap closed", a.pct === null ? "—" : Math.round(Math.max(0, a.pct)) + "%", b.pct === null ? "—" : Math.round(Math.max(0, b.pct)) + "%")}
+    ${row("actual pace", paceCell(a), paceCell(b))}
+    ${row("projected 3/1", projCell(a, PEOPLE[0]), projCell(b, PEOPLE[1]))}
+    ${row("gap closed (trend)", a.pct === null ? "—" : Math.round(Math.max(0, a.pct)) + "%", b.pct === null ? "—" : Math.round(Math.max(0, b.pct)) + "%")}
     ${row("avg cals, last 7 days", q(a.avg7), q(b.avg7))}
-    <tr class="winner"><th>who's winning</th><td colspan="2" style="text-align:center">${winner}</td></tr>
+    <tr class="winner"><th>who's winning</th><td colspan="2" style="text-align:center;padding:0"><marquee scrollamount="4" style="background:transparent;color:inherit;padding:5px 0">${winner}</marquee></td></tr>
   </table>`;
 }
 
@@ -286,7 +381,7 @@ function drawScoreboard() {
 function drawGrid() {
   let html = "";
   for (const p of PEOPLE) {
-    html += `<p style="margin:10px 0 3px"><span class="${p.cls}">${p.name}</span></p>`;
+    html += `<p style="margin:10px 0 3px"><span class="${p.cls}">${p.name}</span> <span class="small" style="font-family:'Courier New',monospace">(green = ${p.calGoal}+)</span></p>`;
     let cur = D(START);
     const end = D(END);
     let month = -1, line = "";
@@ -302,7 +397,7 @@ function drawGrid() {
       let style = "background:#fff;border:1px solid #e5e5e5;width:11px;height:11px", t = k + ": the future";
       if (k <= today) {
         if (day) {
-          style = "background:" + (day.calories >= CAL_GOAL ? "#2da44e" : "#d1242f");
+          style = "background:" + (day.calories >= p.calGoal ? "#2da44e" : "#d1242f");
           t = k + ": " + Math.round(day.calories) + " cal";
         } else { style = "background:#c9c9c9"; t = k + ": no log"; }
       }
