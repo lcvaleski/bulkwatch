@@ -88,8 +88,6 @@
   <div id="chart"><i>loading…</i></div>
   <p class="small">faint dots = raw weigh-ins · solid = 7-day trend · dashed = pace needed by 3/1 · ★ = goal</p>
 
-  <p style="margin:26px 0 2px;font-family:'Courier New',monospace"><b>THE RACE TO 100%</b> <span class="small">(gap closed)</span></p>
-  <div id="race"></div>
 
   <div id="scoreboard"><i>loading…</i></div>
 
@@ -189,7 +187,7 @@ Promise.all([
 ]).then(([lj, fj, lw, fw]) => {
   PEOPLE[0].days = lj.days || {}; PEOPLE[1].days = fj.days || {};
   PEOPLE[0].weights = parseWeightsCSV(lw); PEOPLE[1].weights = parseWeightsCSV(fw);
-  drawChart(); drawRace(); drawScoreboard(); drawGrid(); drawRandomDay();
+  drawChart(); drawScoreboard(); drawGrid(); drawRandomDay();
 });
 
 // least-squares trend over the last 14 days of weigh-ins (needs >= 2 points)
@@ -277,48 +275,6 @@ function panel(p, x0, x1) {
   s += `<text x="${lastPt[0] + dx}" y="${lastPt[1] - 8}" font-size="11" fill="${p.color}" font-weight="bold" text-anchor="${anchor}">${(Math.round(last.lbs * 10) / 10)}</text>`;
   s += `<line x1="${L}" y1="${H - B}" x2="${W - R}" y2="${H - B}" stroke="#999"/><line x1="${L}" y1="${T}" x2="${L}" y2="${H - B}" stroke="#999"/>`;
   return head + `<svg viewBox="0 0 ${W} ${H}">${s}</svg>`;
-}
-
-/* ---------- race chart ---------- */
-function drawRace() {
-  const el = document.getElementById("race");
-  const racers = PEOPLE.filter(p => p.weights.length && p.goal !== p.weights[0].lbs);
-  if (!racers.length) {
-    el.innerHTML = '<p class="small" style="color:#888;font-family:\'Courier New\',monospace">race begins at first weigh-in</p>';
-    return;
-  }
-  const W = 680, H = 200, L = 40, R = 60, T = 12, B = 22;
-  const x0 = Math.min(...racers.map(p => +D(p.weights[0].date)));
-  const x1 = +D(END);
-  const series = racers.map(p => ({
-    p,
-    pts: rolling(p.weights).map(w => [+D(w.date), (w.lbs - p.weights[0].lbs) / (p.goal - p.weights[0].lbs) * 100]),
-  }));
-  let ymin = Math.min(0, ...series.flatMap(sr => sr.pts.map(q => q[1])));
-  ymin = Math.floor(ymin / 10) * 10 - 5;
-  const ymax = 105;
-  const X = t => L + (t - x0) / (x1 - x0) * (W - L - R);
-  const Y = v => T + (ymax - v) / (ymax - ymin) * (H - T - B);
-  let s = "";
-  for (let v = 0; v <= 100; v += 25) {
-    s += `<line x1="${L}" y1="${Y(v)}" x2="${W - R}" y2="${Y(v)}" stroke="${v === 100 ? "#ccc" : "#eee"}"/>`
-       + `<text x="${L - 4}" y="${Y(v) + 3}" font-size="9" fill="#888" text-anchor="end">${v}%</text>`;
-  }
-  for (let d = new Date(x0); d <= new Date(x1); d.setMonth(d.getMonth() + 1, 1)) {
-    if (+d < x0) continue;
-    if (X(+d) > L + 20) s += `<text x="${X(+d)}" y="${H - B + 12}" font-size="8" fill="#888" text-anchor="middle">${d.toLocaleString("en", { month: "short" }).toUpperCase()}</text>`;
-  }
-  s += `<line x1="${X(x0)}" y1="${Y(0)}" x2="${X(x1)}" y2="${Y(100)}" stroke="#999" stroke-dasharray="4,4"/>`
-     + `<text x="${W - R + 4}" y="${Y(100) + 3}" font-size="10" fill="#555">&#127937; 3/1</text>`;
-  for (const { p, pts } of series) {
-    const xy = pts.map(q => [X(q[0]), Y(q[1])]);
-    if (xy.length > 1) s += `<polyline points="${xy.map(q => q.join(",")).join(" ")}" fill="none" stroke="${p.color}" stroke-width="2.5"/>`;
-    const lastXY = xy[xy.length - 1], lastPct = pts[pts.length - 1][1];
-    s += `<circle cx="${lastXY[0]}" cy="${lastXY[1]}" r="4" fill="${p.color}"/>`
-       + `<text x="${lastXY[0] + 6}" y="${lastXY[1] + 3}" font-size="10" fill="${p.color}" font-weight="bold">${p.name} ${Math.round(lastPct)}%</text>`;
-  }
-  s += `<line x1="${L}" y1="${H - B}" x2="${W - R}" y2="${H - B}" stroke="#999"/><line x1="${L}" y1="${T}" x2="${L}" y2="${H - B}" stroke="#999"/>`;
-  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;background:#fff">${s}</svg>`;
 }
 
 /* ---------- scoreboard ---------- */
