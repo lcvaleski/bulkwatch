@@ -88,7 +88,7 @@
   <div id="chart"><i>loading…</i></div>
   <p class="small">faint dots = raw weigh-ins · solid = 7-day trend · dashed = pace needed by 3/1 · ★ = goal</p>
 
-  <p style="margin:26px 0 2px;font-family:'Courier New',monospace"><b>THE RACE TO 100%</b> <span class="small">(gap closed — first to their goal wins)</span></p>
+  <p style="margin:26px 0 2px;font-family:'Courier New',monospace"><b>THE RACE TO 100%</b> <span class="small">(gap closed)</span></p>
   <div id="race"></div>
 
   <div id="scoreboard"><i>loading…</i></div>
@@ -357,11 +357,6 @@ function drawScoreboard() {
   const [a, b] = PEOPLE.map(stats);
   const q = (v, suf = "") => v === null ? "—" : (typeof v === "number" && !Number.isInteger(v) ? v.toFixed(1) : v) + suf;
   const row = (label, va, vb) => `<tr><td>${label}</td><td class="logan">${va}</td><td class="felix">${vb}</td></tr>`;
-  let winner = "TOO EARLY TO CALL — WEIGH IN";
-  if (a.pct !== null && b.pct !== null) {
-    winner = a.pct === b.pct ? "DEAD HEAT" :
-      (a.pct > b.pct ? `<span class="logan">👑 LOGAN LEADS 👑</span>` : `<span class="felix">👑 FELIX LEADS 👑</span>`);
-  }
   document.getElementById("scoreboard").innerHTML = `
   <table class="score">
     <tr><th></th><th class="logan">LOGAN</th><th class="felix">FELIX</th></tr>
@@ -373,7 +368,6 @@ function drawScoreboard() {
     ${row("projected 3/1", projCell(a, PEOPLE[0]), projCell(b, PEOPLE[1]))}
     ${row("gap closed (trend)", a.pct === null ? "—" : Math.round(Math.max(0, a.pct)) + "%", b.pct === null ? "—" : Math.round(Math.max(0, b.pct)) + "%")}
     ${row("avg cals, last 7 days", q(a.avg7), q(b.avg7))}
-    <tr class="winner"><th>who's winning</th><td colspan="2" style="text-align:center;padding:0"><marquee scrollamount="4" style="background:transparent;color:inherit;padding:5px 0">${winner}</marquee></td></tr>
   </table>`;
 }
 
