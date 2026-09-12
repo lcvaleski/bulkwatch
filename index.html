@@ -221,13 +221,7 @@ function drawChart() {
 }
 
 function panel(p, x0, x1) {
-  const staleDays = p.weights.length ? daysBetween(p.weights[p.weights.length - 1].date, today) : null;
-  const staleTxt = staleDays === null ? '<span style="color:#d1242f">has never weighed in</span>'
-    : staleDays === 0 ? '<span style="color:#888">weighed in today</span>'
-    : staleDays < 3 ? `<span style="color:#888">last weigh-in ${staleDays} day${staleDays > 1 ? "s" : ""} ago</span>`
-    : `<span style="color:#d1242f;font-weight:bold">last weigh-in ${staleDays} days ago!!</span>`;
-  const head = `<p style="margin:0 0 2px;text-align:center;font-family:'Courier New',monospace"><span class="${p.cls}">${p.name}</span></p>
-    <p class="small" style="margin:0 0 4px;text-align:center;font-family:'Courier New',monospace;font-size:0.7em">${staleTxt}</p>`;
+  const head = `<p style="margin:0 0 2px;text-align:center;font-family:'Courier New',monospace"><span class="${p.cls}">${p.name}</span></p>`;
   if (!p.weights.length) {
     return head + `<div style="aspect-ratio:330/290;display:flex;align-items:center;justify-content:center;color:#cc0000;font-family:'Courier New',monospace;font-weight:bold;font-size:0.75em">NO WEIGH-INS YET</div>`;
   }
