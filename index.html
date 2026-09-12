@@ -235,7 +235,7 @@ function panel(p, x0, x1) {
     : staleDays === 0 ? '<span style="color:#888">weighed in today</span>'
     : staleDays < 3 ? `<span style="color:#888">last weigh-in ${staleDays} day${staleDays > 1 ? "s" : ""} ago</span>`
     : `<span style="color:#d1242f;font-weight:bold">last weigh-in ${staleDays} days ago!!</span>`;
-  const head = `<p style="margin:0 0 2px;text-align:center;font-family:'Courier New',monospace"><span class="${p.cls}">${p.name}</span> <span class="small">&rarr; ${p.goal} lb by 3/1</span></p>
+  const head = `<p style="margin:0 0 2px;text-align:center;font-family:'Courier New',monospace"><span class="${p.cls}">${p.name}</span></p>
     <p class="small" style="margin:0 0 4px;text-align:center;font-family:'Courier New',monospace;font-size:0.7em">${staleTxt}</p>`;
   if (!p.weights.length) {
     return head + `<div style="aspect-ratio:330/290;display:flex;align-items:center;justify-content:center;color:#cc0000;font-family:'Courier New',monospace;font-weight:bold;font-size:0.75em">NO WEIGH-INS YET</div>`;
