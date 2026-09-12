@@ -86,7 +86,7 @@
 <body>
 <div id="page">
   <div id="chart"><i>loading…</i></div>
-  <p class="small">faint dots = raw weigh-ins · solid = 7-day trend · dashed = pace needed by 3/1 · ★ = goal</p>
+  <p class="small">faint dots = raw weigh-ins · solid = 7-day trend · ★ = goal</p>
 
 
   <div id="scoreboard"><i>loading…</i></div>
@@ -267,7 +267,6 @@ function panel(p, x0, x1) {
   const raw = p.weights.map(w => [X(+D(w.date)), Y(w.lbs)]);
   const pts = smooth.map(w => [X(+D(w.date)), Y(w.lbs)]);
   const lastPt = pts[pts.length - 1], last = smooth[smooth.length - 1];
-  s += `<line x1="${lastPt[0]}" y1="${lastPt[1]}" x2="${X(+D(END))}" y2="${Y(p.goal)}" stroke="${p.color}" stroke-dasharray="5,4" stroke-width="1.5" opacity="0.5"/>`;
   s += raw.map((q, i) => `<circle cx="${q[0]}" cy="${q[1]}" r="3" fill="${p.color}" opacity="0.3"><title>${fmt(p.weights[i].date)}: ${p.weights[i].lbs} lb</title></circle>`).join("");
   if (pts.length > 1) s += `<polyline points="${pts.map(q => q.join(",")).join(" ")}" fill="none" stroke="${p.color}" stroke-width="2.5"/>`;
   s += `<circle cx="${lastPt[0]}" cy="${lastPt[1]}" r="4" fill="${p.color}"/>`;
