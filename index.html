@@ -86,7 +86,7 @@
 <body>
 <div id="page">
   <div id="chart"><i>loading…</i></div>
-  <p class="small">faint dots = raw weigh-ins · solid = 7-day trend · ★ = goal</p>
+  <p class="small">faint dots = raw weigh-ins · solid = 7-day trend</p>
 
   <p style="margin:26px 0 2px;font-family:'Courier New',monospace"><b>THE RACE TO 100%</b> <span class="small">(gap closed)</span></p>
   <div id="race"></div>
@@ -242,7 +242,7 @@ function panel(p, x0, x1) {
   }
   const W = 330, H = 290, L = 34, R = 14, T = 14, B = 24;
   const lo = Math.floor(Math.min(...p.weights.map(w => w.lbs)) / 5) * 5 - 5;
-  const hi = Math.ceil(Math.max(...p.weights.map(w => w.lbs), p.goal) / 5) * 5 + 5;
+  const hi = Math.ceil(Math.max(...p.weights.map(w => w.lbs)) / 5) * 5 + 5;
   const X = t => L + (t - x0) / (x1 - x0) * (W - L - R);
   const Y = v => T + (hi - v) / (hi - lo) * (H - T - B);
   let s = "";
@@ -264,8 +264,6 @@ function panel(p, x0, x1) {
          + `<text x="${X(+d)}" y="${H - B + 12}" font-size="8" fill="#888" text-anchor="middle">${d.toLocaleString("en", { month: "short" }).toUpperCase()}</text>`;
     }
   }
-  s += `<line x1="${L}" y1="${Y(p.goal)}" x2="${W - R}" y2="${Y(p.goal)}" stroke="${p.color}" stroke-dasharray="2,3" opacity="0.5"/>`
-     + `<text x="${W - R}" y="${Y(p.goal) - 4}" font-size="11" fill="${p.color}" font-weight="bold" text-anchor="end">&#9733; ${p.goal}</text>`;
   const smooth = rolling(p.weights);
   const raw = p.weights.map(w => [X(+D(w.date)), Y(w.lbs)]);
   const pts = smooth.map(w => [X(+D(w.date)), Y(w.lbs)]);
