@@ -1547,6 +1547,148 @@
      2
     ]
    ]
+  },
+  "2026-09-11": {
+   "calories": 2955.0,
+   "protein": 147.8,
+   "carbs": 324.3,
+   "fat": 125.6,
+   "meals": [
+    [
+     "Sandwich not so fried mendo farms",
+     900,
+     35
+    ],
+    [
+     "45-60g peanut butter\n100gish Greek yogurt\n1 banana\n100gish frozen fruit\n1 tbsp honey\nOat milk to fill as smoothie",
+     800,
+     25
+    ],
+    [
+     "rlife CORE POWER High Protein Milk Shake Chocolate. 1",
+     230,
+     42
+    ],
+    [
+     "Big bowl of beef pasta",
+     750,
+     38
+    ],
+    [
+     "Half bagel with cream cheese",
+     155,
+     6
+    ],
+    [
+     "Little bit of ice cream",
+     120,
+     2
+    ]
+   ]
+  },
+  "2026-09-12": {
+   "calories": 3219.0,
+   "protein": 133.9,
+   "carbs": 371.7,
+   "fat": 137.3,
+   "meals": [
+    [
+     "Half bagel with cream cheese",
+     155,
+     6
+    ],
+    [
+     "Chicken pesto sandwich",
+     500,
+     24
+    ],
+    [
+     "45-60g peanut butter\n100gish Greek yogurt\n1 banana\n100gish frozen fruit\n1 tbsp honey\nOat milk to fill as smoothie",
+     800,
+     25
+    ],
+    [
+     "2 BBQ pork bao buns and 6 chicken potstickers",
+     764,
+     37
+    ],
+    [
+     "3 eggs in a bagel with slice of cheese",
+     600,
+     35
+    ],
+    [
+     "Half pint ice cream",
+     400,
+     6
+    ]
+   ]
+  },
+  "2026-09-13": {
+   "calories": 2925.0,
+   "protein": 153.8,
+   "carbs": 315.4,
+   "fat": 93.6,
+   "meals": [
+    [
+     "45-60g peanut butter\n100gish Greek yogurt\n1 banana\n100gish frozen fruit\n1 tbsp honey\nOat milk to fill as smoothie",
+     800,
+     25
+    ],
+    [
+     "2 glasses white wine",
+     250,
+     0
+    ],
+    [
+     "Hoagie large turkey club",
+     850,
+     62
+    ],
+    [
+     "Chicken plate with rice",
+     625,
+     60
+    ],
+    [
+     "Half pint mint ice cream",
+     400,
+     6
+    ]
+   ]
+  },
+  "2026-09-14": {
+   "calories": 3000.0,
+   "protein": 192.9,
+   "carbs": 269.3,
+   "fat": 129.6,
+   "meals": [
+    [
+     "Watermelon drink",
+     120,
+     2
+    ],
+    [
+     "45-60g peanut butter\n100gish Greek yogurt\n1 banana\n100gish frozen fruit\n1 tbsp honey\nOat milk to fill as smoothie",
+     800,
+     25
+    ],
+    [
+     "Chicken egg and rice bowl",
+     575,
+     53
+    ],
+    [
+     "375 cal rice and bean pack",
+     375,
+     13
+    ],
+    [
+     "1 lb sirloin steak with marinade",
+     1130,
+     100
+    ]
+   ]
   }
  }
 }
