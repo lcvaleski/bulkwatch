@@ -1658,10 +1658,10 @@
    ]
   },
   "2026-09-14": {
-   "calories": 3000.0,
-   "protein": 192.9,
-   "carbs": 269.3,
-   "fat": 129.6,
+   "calories": 3494.0,
+   "protein": 204.7,
+   "carbs": 342.1,
+   "fat": 148.1,
    "meals": [
     [
      "Watermelon drink",
@@ -1687,6 +1687,67 @@
      "1 lb sirloin steak with marinade",
      1130,
      100
+    ],
+    [
+     "Large soft serve ice cream cone",
+     494,
+     12
+    ]
+   ]
+  },
+  "2026-09-15": {
+   "calories": 2950.0,
+   "protein": 174.3,
+   "carbs": 279.3,
+   "fat": 129.5,
+   "meals": [
+    [
+     "45-60g peanut butter\n100gish Greek yogurt\n1 banana\n100gish frozen fruit\n1 tbsp honey\nOat milk to fill as smoothie",
+     800,
+     25
+    ],
+    [
+     "2 chicken tenders",
+     200,
+     20
+    ],
+    [
+     "Ikes sandwich",
+     900,
+     45
+    ],
+    [
+     "fairlife CORE POWER ELITE VANILLA High Protein Milkshake. 1",
+     230,
+     42
+    ],
+    [
+     "Tonkatsu udon with shrimp tempura and boiled egg",
+     820,
+     42
+    ]
+   ]
+  },
+  "2026-09-16": {
+   "calories": 1960.0,
+   "protein": 85.3,
+   "carbs": 237.3,
+   "fat": 83.5,
+   "meals": [
+    [
+     "45-60g peanut butter\n100gish Greek yogurt\n1 banana\n100gish frozen fruit\n1 tbsp honey\nOat milk to fill as smoothie",
+     800,
+     25
+    ],
+    [
+     "Thai mango wrap Mendocino farms",
+     930,
+     18
+    ],
+    [
+     "fairlife CORE POWER ELITE VANILLA High Protein Milkshake. 1",
+     230,
+     42
     ]
    ]
   }
