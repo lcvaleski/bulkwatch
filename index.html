@@ -88,7 +88,6 @@
   <div id="chart"><i>loading…</i></div>
   <p class="small">faint dots = raw weigh-ins · solid = 7-day trend</p>
 
-  <p style="margin:26px 0 2px;font-family:'Courier New',monospace"><b>THE RACE TO 100%</b> <span class="small">(gap closed)</span></p>
   <div id="race"></div>
 
 
@@ -141,7 +140,7 @@
 const START = "2026-09-01";
 const END = "2027-03-01";
 const PEOPLE = [
-  { key: "logan", name: "LOGAN", goal: 170, calGoal: 2600, color: "#0000cc", cls: "logan" },
+  { key: "logan", name: "LOGAN", goal: 170, calGoal: 2900, color: "#0000cc", cls: "logan" },
   { key: "felix", name: "FELIX", goal: 165, calGoal: 3400, color: "#cc0000", cls: "felix" },
 ];
 
@@ -345,7 +344,6 @@ function drawScoreboard() {
     <tr><th></th><th class="logan">LOGAN</th><th class="felix">FELIX</th></tr>
     ${row("current weight", q(a.cur, " lb"), q(b.cur, " lb"))}
     ${row("goal", "170 lb", "165 lb")}
-    ${row("lbs to go", q(a.togo), q(b.togo))}
     ${row("pace needed", q(a.pace, " lb/wk"), q(b.pace, " lb/wk"))}
     ${row("actual pace", paceCell(a), paceCell(b))}
     ${row("projected 3/1", projCell(a, PEOPLE[0]), projCell(b, PEOPLE[1]))}
