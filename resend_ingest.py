@@ -55,11 +55,12 @@ def process(row):
         merge.log_weight(person, float(m.group(1)), received)
 
     for a in e.get("attachments") or []:
-        if not (a.get("filename") or "").lower().endswith(".csv"):
+        name = (a.get("filename") or "").lower()
+        if not name.endswith((".csv", ".zip")):
             continue
         meta = api(f"/emails/receiving/{row['id']}/attachments/{a['id']}")
         with urllib.request.urlopen(meta["download_url"]) as r, tempfile.NamedTemporaryFile(
-            suffix=".csv", delete=False
+            suffix=name[-4:], delete=False
         ) as f:
             f.write(r.read())
             tmp = f.name

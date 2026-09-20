@@ -15,7 +15,7 @@ jobs:
       - name: merge new csvs into site data
         run: |
           set -e
-          files=$(git diff --diff-filter=AM --name-only HEAD^ HEAD -- 'inbox/*/*.csv' || true)
+          files=$(git diff --diff-filter=AM --name-only HEAD^ HEAD -- 'inbox/*/*.csv' 'inbox/*/*.zip' || true)
           if [ -z "$files" ]; then echo "no new csvs"; exit 0; fi
           for f in $files; do
             person=$(basename "$(dirname "$f")")

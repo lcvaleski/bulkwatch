@@ -1,5 +1,226 @@
 {
  "days": {
+  "2026-01-08": {
+   "calories": 2164.0,
+   "protein": 91.6,
+   "carbs": 198.0,
+   "fat": 92.6,
+   "meals": [
+    [
+     "Small pizza",
+     950,
+     40
+    ],
+    [
+     "Arugula salad",
+     25,
+     3
+    ],
+    [
+     "Wine glass",
+     125,
+     0
+    ],
+    [
+     "Large sandwich",
+     600,
+     25
+    ],
+    [
+     "Small chips",
+     150,
+     2
+    ],
+    [
+     "3 eggs toast",
+     314,
+     22
+    ]
+   ]
+  },
+  "2026-01-20": {
+   "calories": 1355.0,
+   "protein": 56.0,
+   "carbs": 168.0,
+   "fat": 47.0,
+   "meals": [
+    [
+     "Loaded lox bagel with classics in it",
+     550,
+     24
+    ],
+    [
+     "Margarita pizza",
+     285,
+     12
+    ],
+    [
+     "Udon with some beef thin cut onion and scallion",
+     520,
+     20
+    ]
+   ]
+  },
+  "2026-01-21": {
+   "calories": 1376.0,
+   "protein": 88.0,
+   "carbs": 137.0,
+   "fat": 55.0,
+   "meals": [
+    [
+     "3 eggs, kimchi on toast with cucumbers, breakfast sausage",
+     480,
+     28
+    ],
+    [
+     "Oatmeal with banana and peanut butter",
+     420,
+     13
+    ],
+    [
+     "Chicken breast with wild grain rice and broccoli",
+     476,
+     47
+    ]
+   ]
+  },
+  "2026-01-22": {
+   "calories": 2431.0,
+   "protein": 120.0,
+   "carbs": 207.5,
+   "fat": 51.9,
+   "meals": [
+    [
+     "3 eggs toast kimchi and breakfast sausage",
+     440,
+     27
+    ],
+    [
+     "Chicken breast with wild grain rice and broccoli",
+     476,
+     47
+    ],
+    [
+     "Salmon and broccoli and pasta dish with tomato sauce",
+     517,
+     37
+    ],
+    [
+     "4 beers",
+     588,
+     5
+    ],
+    [
+     "1 high noon",
+     100,
+     0
+    ],
+    [
+     "1 beer",
+     155,
+     2
+    ],
+    [
+     "1 beer",
+     155,
+     2
+    ]
+   ]
+  },
+  "2026-01-23": {
+   "calories": 2499.0,
+   "protein": 102.3,
+   "carbs": 244.4,
+   "fat": 70.9,
+   "meals": [
+    [
+     "Udon with some beef thin cut onion and scallion",
+     520,
+     20
+    ],
+    [
+     "3 eggs toast kimchi and breakfast sausage",
+     440,
+     27
+    ],
+    [
+     "Espresso",
+     2,
+     0
+    ],
+    [
+     "Salmon and broccoli and pasta dish with tomato sauce",
+     517,
+     37
+    ],
+    [
+     "Cheese pizza",
+     285,
+     12
+    ],
+    [
+     "5 beers",
+     735,
+     6
+    ]
+   ]
+  },
+  "2026-01-24": {
+   "calories": 1835.0,
+   "protein": 84.0,
+   "carbs": 158.0,
+   "fat": 92.0,
+   "meals": [
+    [
+     "3 eggs toast kimchi and breakfast sausage",
+     440,
+     27
+    ],
+    [
+     "Margarita pizza",
+     285,
+     12
+    ],
+    [
+     "Tonkatsu ramen with 2 eggs",
+     890,
+     42
+    ],
+    [
+     "Couple of madeleines",
+     220,
+     3
+    ]
+   ]
+  },
+  "2026-01-25": {
+   "calories": 2588.0,
+   "protein": 102.0,
+   "carbs": 253.0,
+   "fat": 130.5,
+   "meals": [
+    [
+     "3 eggs toast kimchi and breakfast sausage",
+     440,
+     27
+    ],
+    [
+     "Half piece salmon some wild rice",
+     341,
+     24
+    ],
+    [
+     "Mapo tofu, shrimp dumpling , bao buns scallion pancake ice cream",
+     1357,
+     44
+    ],
+    [
+     "Couple pieces of banana bread",
+     450,
+     6
+    ]
+   ]
+  },
   "2026-04-14": {
    "calories": 3180.0,
    "protein": 204.5,
@@ -1729,10 +1950,10 @@
    ]
   },
   "2026-09-16": {
-   "calories": 1960.0,
-   "protein": 85.3,
-   "carbs": 237.3,
-   "fat": 83.5,
+   "calories": 3595.0,
+   "protein": 195.8,
+   "carbs": 334.3,
+   "fat": 171.5,
    "meals": [
     [
      "45-60g peanut butter\n100gish Greek yogurt\n1 banana\n100gish frozen fruit\n1 tbsp honey\nOat milk to fill as smoothie",
@@ -1748,6 +1969,120 @@
      "fairlife CORE POWER ELITE VANILLA High Protein Milkshake. 1",
      230,
      42
+    ],
+    [
+     "Rice, 1 lb sirloin steak, half tomato",
+     1515,
+     108
+    ],
+    [
+     "Little bit if ice cream",
+     120,
+     2
+    ]
+   ]
+  },
+  "2026-09-17": {
+   "calories": 3150.0,
+   "protein": 174.2,
+   "carbs": 225.1,
+   "fat": 158.9,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     862,
+     38
+    ],
+    [
+     "Mendo farms caprese sandwich",
+     800,
+     42
+    ],
+    [
+     "fairlife CORE POWER ELITE VANILLA High Protein Milkshake. 1",
+     230,
+     42
+    ],
+    [
+     "6 eggs and a bagel tablespoon butter half tomato",
+     834,
+     49
+    ],
+    [
+     "Pint of stella",
+     224,
+     0
+    ],
+    [
+     "Quarter pint of ice cream",
+     200,
+     3
+    ]
+   ]
+  },
+  "2026-09-18": {
+   "calories": 3891.0,
+   "protein": 154.5,
+   "carbs": 281.3,
+   "fat": 175.6,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     862,
+     38
+    ],
+    [
+     "Mendo farms fajita steak wrap",
+     1250,
+     64
+    ],
+    [
+     "Large Korean bbq meal",
+     900,
+     45
+    ],
+    [
+     "1 liter beer",
+     430,
+     5
+    ],
+    [
+     "1 large Sapporo",
+     257,
+     3
+    ],
+    [
+     "3 shots of soju",
+     192,
+     0
+    ]
+   ]
+  },
+  "2026-09-19": {
+   "calories": 2673.0,
+   "protein": 198.9,
+   "carbs": 215.1,
+   "fat": 85.9,
+   "meals": [
+    [
+     "1 lb chicken 3 tortillas 1 tomato",
+     1190,
+     110
+    ],
+    [
+     "3 eggs and bagel",
+     493,
+     30
+    ],
+    [
+     "fairlife STRAWBERRY 2% REDUCED FAT ultra-filtered milk. 1",
+     250,
+     23
+    ],
+    [
+     "Chicken tikka masala and naan",
+     740,
+     36
     ]
    ]
   }

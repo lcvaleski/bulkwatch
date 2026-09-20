@@ -65,16 +65,19 @@ export default {
     if (file.size > MAX_BYTES) return reply(req, 400, { error: "file too big (2MB max)" });
 
     const buf = new Uint8Array(await file.arrayBuffer());
-    const head = new TextDecoder().decode(buf.slice(0, 300)).toLowerCase();
-    if (!head.includes("date") || !head.includes("calories")) {
-      return reply(req, 400, { error: "that doesn't look like a mist export" });
+    const isZip = buf[0] === 0x50 && buf[1] === 0x4b;
+    if (!isZip) {
+      const head = new TextDecoder().decode(buf.slice(0, 300)).toLowerCase();
+      if (!head.includes("date") || !head.includes("calories")) {
+        return reply(req, 400, { error: "that doesn't look like a mist export" });
+      }
     }
 
     let bin = "";
     for (let i = 0; i < buf.length; i += 8192) {
       bin += String.fromCharCode(...buf.subarray(i, i + 8192));
     }
-    const path = `inbox/${person}/web-${Date.now()}.csv`;
+    const path = `inbox/${person}/web-${Date.now()}.${isZip ? "zip" : "csv"}`;
     const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
       method: "PUT",
       headers: {

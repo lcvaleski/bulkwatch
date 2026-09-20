@@ -65,10 +65,58 @@ def save_weights(person, weights):
             w.writerow([d, weights[d]])
 
 
-def merge_csv(person, csv_file):
+def merge_csv(person, path):
+    """Merge a Mist export: a journal/stats .csv, or a .zip containing them."""
+    import io
+    import zipfile
+
+    if zipfile.is_zipfile(path):
+        with zipfile.ZipFile(path) as z:
+            names = [n for n in z.namelist() if n.lower().endswith(".csv") and not n.startswith("__MACOSX")]
+            if not names:
+                die(f"no csv files inside {path}")
+            for n in names:
+                _merge_file(person, io.TextIOWrapper(z.open(n), encoding="utf-8-sig"), n)
+    else:
+        with open(path, newline="", encoding="utf-8-sig") as f:
+            _merge_file(person, f, path)
+
+
+def _merge_file(person, f, label):
+    reader = csv.DictReader(f)
+    fields = reader.fieldnames or []
+    if "weight" in fields and "entry" not in fields:
+        _merge_stats(person, reader, label)
+    else:
+        _merge_journal(person, reader, label)
+
+
+def _merge_stats(person, reader, label):
+    """daily_stats.csv: one row per day, weight + weight_unit columns."""
+    weights = {}
+    for row in reader:
+        d = (row.get("date") or "").strip()
+        if not DATE_RE.fullmatch(d):
+            continue
+        v = num(row.get("weight"))
+        if not v:
+            continue
+        if (row.get("weight_unit") or "lb").strip().lower() == "kg":
+            v *= 2.20462
+        weights[d] = round(v, 1)
+    if not weights:
+        print(f"{label}: no weigh-ins found")
+        return
+    stored = load_weights(person)
+    stored.update(weights)
+    save_weights(person, stored)
+    print(f"{person}: merged {len(weights)} weigh-in(s) from {label} -> {len(stored)} total")
+
+
+def _merge_journal(person, reader, label):
     days, weights, unknown = {}, {}, set()
-    with open(csv_file, newline="", encoding="utf-8-sig") as f:
-        for row in csv.DictReader(f):
+    if True:
+        for row in reader:
             d = (row.get("date") or "").strip()
             typ = (row.get("type") or "").strip().lower()
             if not DATE_RE.fullmatch(d):
@@ -83,6 +131,8 @@ def merge_csv(person, csv_file):
                 day["carbs"] += num(row.get("carbs"))
                 day["fat"] += num(row.get("fat"))
                 day["meals"].append([(row.get("entry") or "").strip(), round(cal), round(pro)])
+            elif typ == "exercise":
+                pass  # burned calories don't count against intake
             elif typ in ("weight", "bodyweight", "weigh-in", "weighin"):
                 # Mist hasn't shown us a weight row yet; take the first numeric
                 # value we can find in the likely columns.
@@ -92,7 +142,7 @@ def merge_csv(person, csv_file):
             else:
                 unknown.add(typ or "(blank)")
     if not days and not weights:
-        die(f"no usable rows found in {csv_file}")
+        print(f"{label}: no usable rows"); return
     for day in days.values():
         for k in ("calories", "protein", "carbs", "fat"):
             day[k] = round(day[k], 1)
