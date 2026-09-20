@@ -60,7 +60,7 @@
     font-family: "Courier New", monospace; font-weight: bold;
   }
   .legend { font-size: 0.85em; margin: 30px 0 10px; }
-  #scoreboard, #upform, #wform { margin-top: 30px; }
+  #scoreboard, #upform { margin-top: 30px; }
   .meals { font-size: 0.9em; width: 100%; border-collapse: collapse; margin-bottom: 6px; }
   .meals td { border-bottom: 1px dotted #808080; padding: 2px 6px; }
   .meals td:first-child { width: 70%; }
@@ -110,20 +110,6 @@
   </form>
   <p class="small">mist CSV exports only. re-uploading overlapping dates is fine — newest wins.</p>
 
-  <form id="wform" style="font-family:'Courier New',monospace">
-    <p style="margin:6px 0">
-      <label><input type="radio" name="person" value="logan" required> <span class="logan">LOGAN</span></label>
-      <label><input type="radio" name="person" value="felix"> <span class="felix">FELIX</span></label>
-    </p>
-    <p style="margin:6px 0">
-      <input type="number" name="weight" step="0.1" min="80" max="400" placeholder="152.5" required style="width:90px;font-family:'Courier New',monospace"> lb on
-      <input type="date" name="date" required style="font-family:'Courier New',monospace">
-    </p>
-    <p style="margin:6px 0">
-      <button type="submit" style="font-family:'Courier New',monospace;font-weight:bold;padding:3px 14px;border:2px outset #c0c0c0;background:#e0e0e0;cursor:pointer">TRANSMIT</button>
-      <span id="wstatus"></span>
-    </p>
-  </form>
 
   <hr class="rainbow">
   <footer>
@@ -420,17 +406,6 @@ document.getElementById("upform").addEventListener("submit", async ev => {
   } catch (e) { st.textContent = "❌ upload failed (network)"; }
 });
 
-document.querySelector("#wform [name=date]").value = today;
-document.getElementById("wform").addEventListener("submit", async ev => {
-  ev.preventDefault();
-  const st = document.getElementById("wstatus");
-  st.textContent = "TRANSMITTING…";
-  try {
-    const r = await fetch(UPLOAD_URL, { method: "POST", body: new FormData(ev.target) });
-    const j = await r.json().catch(() => ({}));
-    st.textContent = r.ok ? "✅ LOGGED — site updates in ~2 min" : "❌ " + (j.error || r.status);
-  } catch (e) { st.textContent = "❌ failed (network)"; }
-});
 </script>
 </body>
 </html>
