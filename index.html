@@ -123,6 +123,7 @@
 <script>
 "use strict";
 const START = "2026-09-01";
+const DATA_START = "2026-08-25"; // ignore anything before late august
 const END = "2027-03-01";
 const PEOPLE = [
   { key: "logan", name: "LOGAN", goal: 170, calGoal: 2900, color: "#0000cc", cls: "logan" },
@@ -165,6 +166,10 @@ Promise.all([
 ]).then(([lj, fj, lw, fw]) => {
   PEOPLE[0].days = lj.days || {}; PEOPLE[1].days = fj.days || {};
   PEOPLE[0].weights = parseWeightsCSV(lw); PEOPLE[1].weights = parseWeightsCSV(fw);
+  for (const p of PEOPLE) {
+    p.weights = p.weights.filter(w => w.date >= DATA_START);
+    for (const k of Object.keys(p.days)) if (k < DATA_START) delete p.days[k];
+  }
   drawChart(); drawRace(); drawScoreboard(); drawGrid(); drawRandomDay();
 });
 
