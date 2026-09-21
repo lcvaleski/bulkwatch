@@ -1212,10 +1212,10 @@
    ]
   },
   "2026-09-18": {
-   "calories": 2973.0,
-   "protein": 131.7,
-   "carbs": 330.7,
-   "fat": 109.9,
+   "calories": 3203.0,
+   "protein": 141.7,
+   "carbs": 357.7,
+   "fat": 118.9,
    "meals": [
     [
      "1 cup of whole milk",
@@ -1271,6 +1271,147 @@
      "1 mini cucumber",
      8,
      0
+    ],
+    [
+     "RX bar chocolate",
+     230,
+     10
+    ]
+   ]
+  },
+  "2026-09-19": {
+   "calories": 4890.0,
+   "protein": 153.4,
+   "carbs": 526.8,
+   "fat": 139.2,
+   "meals": [
+    [
+     "75g Honey Nut Cheerios, 1 cup of milk, handful of blueberries",
+     424,
+     14
+    ],
+    [
+     "Handful blueberries",
+     24,
+     0
+    ],
+    [
+     "Costco everything bagel",
+     390,
+     16
+    ],
+    [
+     "Philadelphia Cream Cheese Product. 45g",
+     105,
+     3
+    ],
+    [
+     "0.5 tbsp butter",
+     51,
+     0
+    ],
+    [
+     "1 mini cucumber",
+     8,
+     0
+    ],
+    [
+     "Fratelli Beretta Proscuito di parma. 3 slices",
+     120,
+     12
+    ],
+    [
+     "MTN ASIAN Potstickers. 15 potstickers",
+     600,
+     30
+    ],
+    [
+     "Miss Vickie's Sea Salt & Malt Vinegar Potato Chips. 75g",
+     390,
+     4
+    ],
+    [
+     "1 large gatorade",
+     158,
+     0
+    ],
+    [
+     "Ichiban ramen packet",
+     470,
+     9
+    ],
+    [
+     "1/2 tbsp mayo",
+     55,
+     0
+    ],
+    [
+     "Egg yolk",
+     55,
+     3
+    ],
+    [
+     "7 Jane\u2019s chicken fingers",
+     700,
+     56
+    ],
+    [
+     "1 can PBR",
+     153,
+     2
+    ],
+    [
+     "1 can PBR",
+     153,
+     2
+    ],
+    [
+     "3 glasses of red wine",
+     375,
+     0
+    ],
+    [
+     "2 glasses of rose",
+     250,
+     0
+    ],
+    [
+     "4 shots of port",
+     256,
+     0
+    ],
+    [
+     "1 can PBR",
+     153,
+     2
+    ]
+   ]
+  },
+  "2026-09-20": {
+   "calories": 1846.0,
+   "protein": 75.3,
+   "carbs": 238.7,
+   "fat": 58.4,
+   "meals": [
+    [
+     "Pad Thai with chicken",
+     600,
+     28
+    ],
+    [
+     "Miss Vickie's Sea Salt & Malt Vinegar Potato Chips. 30g",
+     156,
+     2
+    ],
+    [
+     "Costco everything bagel",
+     390,
+     16
+    ],
+    [
+     "Poke bowl",
+     700,
+     30
     ]
    ]
   }
