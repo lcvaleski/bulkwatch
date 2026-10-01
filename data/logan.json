@@ -2221,10 +2221,10 @@
    ]
   },
   "2026-09-23": {
-   "calories": 580.0,
-   "protein": 30.0,
-   "carbs": 36.0,
-   "fat": 36.0,
+   "calories": 3116.0,
+   "protein": 153.9,
+   "carbs": 274.4,
+   "fat": 109.0,
    "meals": [
     [
      "noosa blueberry noosa finest yogurt. 1",
@@ -2235,6 +2235,249 @@
      "Fluffy mini muffin shaped eggs with country style. 1",
      310,
      19
+    ],
+    [
+     "Omakase sushi dinner",
+     700,
+     43
+    ],
+    [
+     "2 beers",
+     306,
+     4
+    ],
+    [
+     "One cocktail",
+     200,
+     0
+    ],
+    [
+     "One champagne",
+     200,
+     0
+    ],
+    [
+     "Sandwich not so fried mendo farms",
+     900,
+     35
+    ],
+    [
+     "fairlife CORE POWER ELITE VANILLA High Protein Milkshake. 1",
+     230,
+     42
+    ]
+   ]
+  },
+  "2026-09-24": {
+   "calories": 1995.0,
+   "protein": 75.1,
+   "carbs": 144.7,
+   "fat": 125.1,
+   "meals": [
+    [
+     "Large breakfast burrito with meat",
+     725,
+     34
+    ],
+    [
+     "Lamb and beef Shawarma plate \ufffc",
+     650,
+     31
+    ],
+    [
+     "Mac and cheese pack with 2 tablespoon butter",
+     620,
+     11
+    ]
+   ]
+  },
+  "2026-09-25": {
+   "calories": 3511.0,
+   "protein": 169.5,
+   "carbs": 342.8,
+   "fat": 107.2,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     862,
+     38
+    ],
+    [
+     "1 lb chicken half cup rice 4 tablespoon green chutney",
+     1100,
+     94
+    ],
+    [
+     "Plate of rigatoni pasta",
+     450,
+     15
+    ],
+    [
+     "Chicago dog",
+     320,
+     13
+    ],
+    [
+     "2 ipa",
+     320,
+     4
+    ],
+    [
+     "2 beers",
+     306,
+     4
+    ],
+    [
+     "1 beer",
+     153,
+     2
+    ]
+   ]
+  },
+  "2026-09-26": {
+   "calories": 2796.0,
+   "protein": 99.9,
+   "carbs": 219.4,
+   "fat": 180.2,
+   "meals": [
+    [
+     "Half bagel",
+     139,
+     5
+    ],
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     862,
+     38
+    ],
+    [
+     "Mac and cheese pack with 3 eggs",
+     1110,
+     51
+    ],
+    [
+     "4 tablespoon butter",
+     400,
+     0
+    ],
+    [
+     "Some oat milk",
+     120,
+     2
+    ],
+    [
+     "Some steak fries and tomato small portion",
+     165,
+     4
+    ]
+   ]
+  },
+  "2026-09-27": {
+   "calories": 2712.0,
+   "protein": 164.3,
+   "carbs": 260.5,
+   "fat": 116.2,
+   "meals": [
+    [
+     "Chicken tikka masala \ufffc",
+     400,
+     32
+    ],
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     862,
+     38
+    ],
+    [
+     "Some rice and chicken",
+     550,
+     40
+    ],
+    [
+     "Chicken and pita bread",
+     720,
+     51
+    ],
+    [
+     "Third pint mint ice cream",
+     180,
+     3
+    ]
+   ]
+  },
+  "2026-09-28": {
+   "calories": 3161.0,
+   "protein": 109.4,
+   "carbs": 293.2,
+   "fat": 140.2,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     862,
+     38
+    ],
+    [
+     "Very large sandwich",
+     1000,
+     50
+    ],
+    [
+     "Shot of olive oil",
+     238,
+     0
+    ],
+    [
+     "Half lb pasta",
+     358,
+     12
+    ],
+    [
+     "Cup of pasta sauce",
+     150,
+     4
+    ],
+    [
+     "Two 16 fl oz beer",
+     400,
+     3
+    ],
+    [
+     "Another beer",
+     153,
+     2
+    ]
+   ]
+  },
+  "2026-09-29": {
+   "calories": 2672.0,
+   "protein": 156.5,
+   "carbs": 282.3,
+   "fat": 107.5,
+   "meals": [
+    [
+     "Noosa Noosa Mix-Ins cherry. 1",
+     280,
+     9
+    ],
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     862,
+     38
+    ],
+    [
+     "Chicken tikka masala burrito",
+     800,
+     67
+    ],
+    [
+     "Chicken and rice",
+     550,
+     40
+    ],
+    [
+     "Some ice cream",
+     180,
+     3
     ]
    ]
   }
