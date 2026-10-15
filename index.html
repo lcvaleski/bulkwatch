@@ -378,13 +378,19 @@ function drawGrid() {
 /* ---------- random day of slop ---------- */
 function drawRandomDay() {
   let html = "";
+  const l = Object.keys(PEOPLE[0].days), f = new Set(Object.keys(PEOPLE[1].days));
+  const both = l.filter(k => f.has(k));
+  const pool = both.length ? both : [...new Set([...l, ...f])];
+  if (!pool.length) {
+    document.getElementById("randomday").innerHTML = "<p>no food on record yet.</p>";
+    return;
+  }
+  const d = pool[Math.floor(Math.random() * pool.length)];
   for (const p of PEOPLE) {
-    const dates = Object.keys(p.days);
-    if (!dates.length) {
-      html += `<p><span class="${p.cls}">${p.name}</span>: no food on record.</p>`;
+    if (!p.days[d]) {
+      html += `<p style="margin:10px 0 4px"><span class="${p.cls}">${p.name}</span> on <b>${fmt(d)}</b> — no log.</p>`;
       continue;
     }
-    const d = dates[Math.floor(Math.random() * dates.length)];
     const day = p.days[d];
     html += `<p style="margin:10px 0 4px"><span class="${p.cls}">${p.name}</span> on <b>${fmt(d)}</b> — ${Math.round(day.calories)} cal, ${Math.round(day.protein)}g protein:</p>
     <table class="meals">${day.meals.map(m => `<tr><td>${m[0]}</td><td>${m[1]} cal</td><td>${m[2]}g pro</td></tr>`).join("")}</table>`;
