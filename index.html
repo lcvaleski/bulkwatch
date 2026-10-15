@@ -354,7 +354,7 @@ function drawScoreboard() {
 function drawGrid() {
   let html = "";
   for (const p of PEOPLE) {
-    html += `<p style="margin:10px 0 3px"><span class="${p.cls}">${p.name}</span> <span class="small" style="font-family:'Courier New',monospace">(green = ${p.calGoal}+)</span></p>`;
+    html += `<p style="margin:10px 0 3px"><span class="${p.cls}">${p.name}</span></p>`;
     let cur = D(START);
     const end = D(END);
     let month = -1, line = "";
@@ -370,9 +370,9 @@ function drawGrid() {
       let style = "background:#fff;border:1px solid #e5e5e5;width:11px;height:11px", t = k + ": the future";
       if (k <= today) {
         if (day) {
-          style = "background:" + (day.calories >= p.calGoal ? "#2da44e" : "#d1242f");
+          style = "background:" + p.color;
           t = k + ": " + Math.round(day.calories) + " cal";
-        } else { style = "background:#c9c9c9"; t = k + ": no log"; }
+        } else { style = "background:#e8e8e8"; t = k + ": no log"; }
       }
       line += `<span class="cell" style="${style}" title="${t}"></span>`;
       cur.setDate(cur.getDate() + 1);
