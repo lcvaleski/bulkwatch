@@ -67,6 +67,13 @@
   .meals td + td { text-align: right; white-space: nowrap; font-family: "Courier New", monospace; font-size: 0.9em; }
   .small { font-size: 0.85em; }
   footer { margin-top: 26px; text-align: center; font-size: 0.85em; }
+  #dropzone {
+    position: fixed; inset: 0; z-index: 10; display: none;
+    background: rgba(255,255,255,0.92);
+    border: 6px dashed #000; box-sizing: border-box;
+    font-family: "Courier New", monospace; font-weight: bold; font-size: 1.4em;
+    align-items: center; justify-content: center; text-align: center;
+  }
   .counter {
     background: #000; color: #00ff00;
     font-family: "Courier New", monospace; padding: 1px 6px; letter-spacing: 3px;
@@ -84,6 +91,7 @@
 </style>
 </head>
 <body>
+<div id="dropzone">DROP YOUR MIST EXPORT<br>(.zip or .csv)</div>
 <div id="page">
   <div id="chart"><i>loading…</i></div>
 
@@ -398,6 +406,31 @@ function drawRandomDay() {
   document.getElementById("randomday").innerHTML = html;
 }
 document.getElementById("reroll").addEventListener("click", ev => { ev.preventDefault(); drawRandomDay(); });
+
+/* ---------- drag and drop ---------- */
+const dz = document.getElementById("dropzone");
+let dragDepth = 0;
+window.addEventListener("dragenter", e => {
+  if (!e.dataTransfer || ![...e.dataTransfer.types].includes("Files")) return;
+  e.preventDefault(); dragDepth++; dz.style.display = "flex";
+});
+window.addEventListener("dragover", e => e.preventDefault());
+window.addEventListener("dragleave", e => {
+  if (--dragDepth <= 0) { dragDepth = 0; dz.style.display = "none"; }
+});
+window.addEventListener("drop", e => {
+  e.preventDefault(); dragDepth = 0; dz.style.display = "none";
+  const f = e.dataTransfer.files && e.dataTransfer.files[0];
+  const st = document.getElementById("upstatus");
+  if (!f) return;
+  if (!/\.(csv|zip)$/i.test(f.name)) { st.textContent = "❌ .csv or .zip only"; return; }
+  const form = document.getElementById("upform");
+  const dt = new DataTransfer();
+  dt.items.add(f);
+  form.querySelector("[name=file]").files = dt.files;
+  if (form.querySelector("[name=person]:checked")) form.requestSubmit();
+  else st.textContent = "got " + f.name + " — now pick LOGAN or FELIX and TRANSMIT";
+});
 
 /* ---------- csv upload ---------- */
 const UPLOAD_URL = "https://bulkwatch-upload.loganvaleski.workers.dev";
