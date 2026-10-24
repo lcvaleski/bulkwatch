@@ -15,7 +15,7 @@
   }
   #page { max-width: 700px; margin: 0 auto; }
   marquee {
-    background: #000; color: #00ff00;
+    background: #000; color: #5a9ad6;
     font-family: "Courier New", monospace; font-weight: bold;
     padding: 3px 0; margin-bottom: 12px;
   }
@@ -26,7 +26,7 @@
   .sub { text-align: center; margin: 0; }
   .deadline {
     text-align: center; font-family: "Courier New", monospace;
-    font-weight: bold; color: #cc0000; margin: 12px 0 0;
+    font-weight: bold; color: #4682B4; margin: 12px 0 0;
   }
   .deadline b { font-size: 1.6em; }
   h2 {
@@ -39,10 +39,10 @@
   }
   .rainbow {
     height: 5px; border: 0; margin: 18px 0 8px;
-    background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, magenta);
+    background: linear-gradient(90deg, #36648e, #4682B4, #5a9ad6);
   }
-  .logan { color: #0000cc; font-weight: bold; }
-  .felix { color: #cc0000; font-weight: bold; }
+  .logan { color: #36648e; font-weight: bold; }
+  .felix { color: #5a9ad6; font-weight: bold; }
   table.score {
     border-collapse: collapse; width: 100%;
     font-family: "Courier New", monospace; font-size: 0.82em;
@@ -50,7 +50,7 @@
   table.score td, table.score th { border: 1px solid #000; padding: 5px 8px; text-align: left; }
   table.score th { background: #e0e0e0; }
   table.score td + td, table.score th + th { text-align: center; }
-  tr.winner td, tr.winner th { background: #ffffcc; }
+  tr.winner td, tr.winner th { background: rgba(70,130,180,0.12); }
   .cell {
     display: inline-block; width: 13px; height: 13px; margin: 0 2px 2px 0;
     border: 1px solid #808080; vertical-align: middle; box-sizing: border-box;
@@ -75,10 +75,12 @@
     align-items: center; justify-content: center; text-align: center;
   }
   .counter {
-    background: #000; color: #00ff00;
+    background: #000; color: #5a9ad6;
     font-family: "Courier New", monospace; padding: 1px 6px; letter-spacing: 3px;
     border: 2px inset #808080;
   }
+  a, a:visited { color: #4682B4; }
+  a:hover { color: #5a9ad6; }
   svg text { font-family: "Courier New", monospace; }
   @media (max-width: 480px) {
     body { padding: 10px 6px; font-size: 15px; }
@@ -134,8 +136,8 @@ const START = "2026-09-01";
 const DATA_START = "2026-08-25"; // ignore anything before late august
 const END = "2027-03-01";
 const PEOPLE = [
-  { key: "logan", name: "LOGAN", goal: 170, calGoal: 2900, color: "#0000cc", cls: "logan" },
-  { key: "felix", name: "FELIX", goal: 165, calGoal: 3400, color: "#cc0000", cls: "felix" },
+  { key: "logan", name: "LOGAN", goal: 170, calGoal: 2900, color: "#36648e", cls: "logan" },
+  { key: "felix", name: "FELIX", goal: 165, calGoal: 3400, color: "#5a9ad6", cls: "felix" },
 ];
 
 const D = s => new Date(s + "T00:00:00");
@@ -220,7 +222,7 @@ function drawChart() {
 function panel(p, x0, x1) {
   const head = `<p style="margin:0 0 2px;text-align:center;font-family:'Courier New',monospace"><span class="${p.cls}">${p.name}</span></p>`;
   if (!p.weights.length) {
-    return head + `<div style="aspect-ratio:330/290;display:flex;align-items:center;justify-content:center;color:#cc0000;font-family:'Courier New',monospace;font-weight:bold;font-size:0.75em">NO WEIGH-INS YET</div>`;
+    return head + `<div style="aspect-ratio:330/290;display:flex;align-items:center;justify-content:center;color:#4682B4;font-family:'Courier New',monospace;font-weight:bold;font-size:0.75em">NO WEIGH-INS YET</div>`;
   }
   const W = 330, H = 290, L = 34, R = 14, T = 14, B = 24;
   const lo = Math.floor(Math.min(...p.weights.map(w => w.lbs)) / 5) * 5 - 5;
@@ -324,13 +326,13 @@ function stats(p) {
 function paceCell(st) {
   if (st.actual === null) return "—";
   const good = st.pace !== null && st.actual >= st.pace;
-  const c = good ? "#2da44e" : "#d1242f";
+  const c = good ? "#4682B4" : "#999";
   return `<span style="color:${c}">${st.actual >= 0 ? "+" : ""}${st.actual.toFixed(1)} lb/wk</span>`;
 }
 function projCell(st, p) {
   if (st.proj === null) return "—";
   const v = Math.round(st.proj * 10) / 10;
-  return v >= p.goal ? `${v} &#9733;` : `<span style="color:#d1242f">${v} &#128128;</span>`;
+  return v >= p.goal ? `${v} &#9733;` : `<span style="color:#999">${v} &#128128;</span>`;
 }
 
 function drawScoreboard() {
