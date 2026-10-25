@@ -2975,6 +2975,349 @@
      36
     ]
    ]
+  },
+  "2026-10-15": {
+   "calories": 1995.0,
+   "protein": 111.0,
+   "carbs": 209.0,
+   "fat": 82.9,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     862,
+     38
+    ],
+    [
+     "Large chicken burrito",
+     783,
+     59
+    ],
+    [
+     "Dim sum 7 potstickers",
+     350,
+     14
+    ]
+   ]
+  },
+  "2026-10-16": {
+   "calories": 2378.0,
+   "protein": 151.5,
+   "carbs": 240.6,
+   "fat": 87.5,
+   "meals": [
+    [
+     "4 eggs and hashbrowns",
+     428,
+     27
+    ],
+    [
+     "Yogurt and fruit",
+     245,
+     9
+    ],
+    [
+     "Tofu curry with rice and some chicken",
+     635,
+     49
+    ],
+    [
+     "Ham sandwich",
+     250,
+     19
+    ],
+    [
+     "Turkey sandwich",
+     250,
+     23
+    ],
+    [
+     "2 slices pizza",
+     570,
+     24
+    ]
+   ]
+  },
+  "2026-10-17": {
+   "calories": 3169.0,
+   "protein": 136.2,
+   "carbs": 236.2,
+   "fat": 83.0,
+   "meals": [
+    [
+     "Bacon egg and cheese on everything bagel big",
+     662,
+     34
+    ],
+    [
+     "chicken bowl",
+     655,
+     50
+    ],
+    [
+     "Bread, escargot",
+     150,
+     11
+    ],
+    [
+     "Couple pieces steak, and some tapas",
+     480,
+     35
+    ],
+    [
+     "Espresso martini",
+     230,
+     0
+    ],
+    [
+     "Beer",
+     153,
+     2
+    ],
+    [
+     "Martini",
+     180,
+     0
+    ],
+    [
+     "Beer",
+     153,
+     2
+    ],
+    [
+     "Beer",
+     153,
+     2
+    ],
+    [
+     "Beer",
+     153,
+     2
+    ],
+    [
+     "Shot",
+     100,
+     0
+    ],
+    [
+     "Shot",
+     100,
+     0
+    ]
+   ]
+  },
+  "2026-10-18": {
+   "calories": 1230.0,
+   "protein": 80.0,
+   "carbs": 110.0,
+   "fat": 53.5,
+   "meals": [
+    [
+     "McGriddle",
+     550,
+     20
+    ],
+    [
+     "Springbone grandmas rice bowl chicken",
+     640,
+     51
+    ],
+    [
+     "Chicken bone broth",
+     40,
+     9
+    ]
+   ]
+  },
+  "2026-10-19": {
+   "calories": 2035.0,
+   "protein": 83.6,
+   "carbs": 248.5,
+   "fat": 43.8,
+   "meals": [
+    [
+     "RXBAR Protein Energy Bites. 2",
+     200,
+     8
+    ],
+    [
+     "Salmon and rice",
+     500,
+     38
+    ],
+    [
+     "Chobani yogurt",
+     90,
+     20
+    ],
+    [
+     "Banana",
+     105,
+     1
+    ],
+    [
+     "Plate of rigatoni pasta",
+     450,
+     15
+    ],
+    [
+     "3 margaritas",
+     600,
+     0
+    ],
+    [
+     "Couple bites of olive oil cake slice",
+     90,
+     1
+    ]
+   ]
+  },
+  "2026-10-20": {
+   "calories": 1627.0,
+   "protein": 93.0,
+   "carbs": 195.0,
+   "fat": 52.9,
+   "meals": [
+    [
+     "English breakfast",
+     648,
+     39
+    ],
+    [
+     "Chicken noodle soup",
+     244,
+     21
+    ],
+    [
+     "Cup of bone broth",
+     40,
+     9
+    ],
+    [
+     "Dahl with rice and a piece of naan",
+     695,
+     24
+    ]
+   ]
+  },
+  "2026-10-21": {
+   "calories": 565.0,
+   "protein": 63.3,
+   "carbs": 25.5,
+   "fat": 21.5,
+   "meals": [
+    [
+     "Salmon on toast",
+     400,
+     32
+    ],
+    [
+     "Couple pieces chicken",
+     165,
+     31
+    ]
+   ]
+  },
+  "2026-10-22": {
+   "calories": 1657.0,
+   "protein": 84.7,
+   "carbs": 119.4,
+   "fat": 97.6,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "6 eggs",
+     432,
+     38
+    ],
+    [
+     "Home fries",
+     220,
+     3
+    ],
+    [
+     "1.5 sausage links",
+     135,
+     7
+    ],
+    [
+     "1.5 pieces toast",
+     120,
+     4
+    ]
+   ]
+  },
+  "2026-10-23": {
+   "calories": 1459.0,
+   "protein": 97.3,
+   "carbs": 88.3,
+   "fat": 77.9,
+   "meals": [
+    [
+     "Club sandwich",
+     686,
+     46
+    ],
+    [
+     "6 eggs and potatoes with sausage",
+     773,
+     51
+    ]
+   ]
+  },
+  "2026-10-24": {
+   "calories": 1290.0,
+   "protein": 62.3,
+   "carbs": 160.2,
+   "fat": 44.9,
+   "meals": [
+    [
+     "Continental breakfast",
+     565,
+     12
+    ],
+    [
+     "Chicken sandwich",
+     426,
+     36
+    ],
+    [
+     "Mango snack",
+     99,
+     1
+    ],
+    [
+     "Granola bar",
+     120,
+     2
+    ],
+    [
+     "Beef jerky",
+     80,
+     11
+    ]
+   ]
+  },
+  "2026-10-25": {
+   "calories": 1250.0,
+   "protein": 75.6,
+   "carbs": 100.5,
+   "fat": 64.7,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Chicken sandwich",
+     500,
+     43
+    ]
+   ]
   }
  }
 }
