@@ -3318,6 +3318,176 @@
      43
     ]
    ]
+  },
+  "2026-10-26": {
+   "calories": 2768.0,
+   "protein": 163.5,
+   "carbs": 235.1,
+   "fat": 125.3,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Chipotle bowl double chicken no rice",
+     800,
+     80
+    ],
+    [
+     "Beer",
+     153,
+     2
+    ],
+    [
+     "Half lb pasta, marinara sauce",
+     495,
+     17
+    ],
+    [
+     ".5 lb meatball",
+     570,
+     32
+    ]
+   ]
+  },
+  "2026-10-27": {
+   "calories": 2747.0,
+   "protein": 139.7,
+   "carbs": 240.5,
+   "fat": 130.5,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Very large sandwich",
+     1000,
+     50
+    ],
+    [
+     "Little bit of rice and chicken",
+     164,
+     20
+    ],
+    [
+     "Beer",
+     153,
+     2
+    ],
+    [
+     "Half small meat pizza",
+     400,
+     19
+    ],
+    [
+     "Half burger",
+     250,
+     13
+    ],
+    [
+     "3 oysters",
+     30,
+     3
+    ]
+   ]
+  },
+  "2026-10-28": {
+   "calories": 2611.0,
+   "protein": 163.5,
+   "carbs": 161.9,
+   "fat": 151.6,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Mendo farms caprese sandwich",
+     800,
+     42
+    ],
+    [
+     "Cup of tomato pesto soup",
+     180,
+     4
+    ],
+    [
+     ".6 lb pork chop with smash potatoes and broccoli",
+     881,
+     85
+    ]
+   ]
+  },
+  "2026-10-29": {
+   "calories": 2919.0,
+   "protein": 125.3,
+   "carbs": 268.3,
+   "fat": 154.9,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Sandwich not so fried mendo farms",
+     900,
+     35
+    ],
+    [
+     "1 cup tomato soup",
+     90,
+     2
+    ],
+    [
+     "Half lb pasta with marinara sauce",
+     495,
+     17
+    ],
+    [
+     ".6 lbs meatballs",
+     684,
+     38
+    ]
+   ]
+  },
+  "2026-10-30": {
+   "calories": 2290.0,
+   "protein": 92.2,
+   "carbs": 217.5,
+   "fat": 93.5,
+   "meals": [
+    [
+     "Lox bagel",
+     460,
+     24
+    ],
+    [
+     "Large turkey sandwich",
+     830,
+     57
+    ],
+    [
+     "2.5 donuts",
+     675,
+     9
+    ],
+    [
+     "2 glasses wine",
+     250,
+     0
+    ],
+    [
+     "Half a salad",
+     75,
+     2
+    ]
+   ]
   }
  }
 }
