@@ -3488,6 +3488,278 @@
      2
     ]
    ]
+  },
+  "2026-10-31": {
+   "calories": 3006.0,
+   "protein": 108.6,
+   "carbs": 254.0,
+   "fat": 121.3,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Momofuku ramen",
+     1241,
+     61
+    ],
+    [
+     "Pasta and marinara sauce",
+     420,
+     14
+    ],
+    [
+     "7 glasses of prosecco",
+     595,
+     1
+    ]
+   ]
+  },
+  "2026-11-01": {
+   "calories": 2185.0,
+   "protein": 119.7,
+   "carbs": 185.0,
+   "fat": 106.8,
+   "meals": [
+    [
+     "Heujvos rancheros with hashbrowns",
+     700,
+     24
+    ],
+    [
+     "Chicken sandwich",
+     500,
+     43
+    ],
+    [
+     "Mapo tofu with rice and kung pao chicken",
+     985,
+     53
+    ]
+   ]
+  },
+  "2026-11-02": {
+   "calories": 1445.0,
+   "protein": 87.2,
+   "carbs": 174.0,
+   "fat": 43.5,
+   "meals": [
+    [
+     "Bagel with cream cheese",
+     380,
+     12
+    ],
+    [
+     "Ramen pack 28g protein",
+     430,
+     28
+    ],
+    [
+     "Chicken burrito",
+     635,
+     47
+    ]
+   ]
+  },
+  "2026-11-03": {
+   "calories": 1925.0,
+   "protein": 91.9,
+   "carbs": 170.0,
+   "fat": 103.3,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Very large sandwich",
+     1000,
+     50
+    ],
+    [
+     "Half a wrap",
+     175,
+     9
+    ]
+   ]
+  },
+  "2026-11-04": {
+   "calories": 2857.0,
+   "protein": 202.1,
+   "carbs": 278.4,
+   "fat": 103.8,
+   "meals": [
+    [
+     "Lox bagel",
+     460,
+     24
+    ],
+    [
+     "Chipotle bowl double chicken",
+     1090,
+     90
+    ],
+    [
+     "Half bagel with cream cheese",
+     155,
+     6
+    ],
+    [
+     "Half bagel",
+     139,
+     5
+    ],
+    [
+     ".5 lbs pasta",
+     358,
+     13
+    ],
+    [
+     ".5 lb pork",
+     550,
+     61
+    ],
+    [
+     "Marinara sauce half can",
+     105,
+     3
+    ]
+   ]
+  },
+  "2026-11-05": {
+   "calories": 2364.0,
+   "protein": 137.1,
+   "carbs": 224.8,
+   "fat": 100.2,
+   "meals": [
+    [
+     "Bagel with cream cheese",
+     380,
+     12
+    ],
+    [
+     "Half bagel",
+     139,
+     5
+    ],
+    [
+     "Mendo farms caprese sandwich",
+     800,
+     42
+    ],
+    [
+     "Half lb pasta with marinara sauce",
+     495,
+     17
+    ],
+    [
+     ".5 lb pork",
+     550,
+     61
+    ]
+   ]
+  },
+  "2026-11-06": {
+   "calories": 2808.0,
+   "protein": 185.5,
+   "carbs": 200.9,
+   "fat": 76.7,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Chicken sandwich",
+     500,
+     43
+    ],
+    [
+     ".7 lb chicken",
+     524,
+     98
+    ],
+    [
+     "Half cup rice",
+     103,
+     2
+    ],
+    [
+     "Some broccoli",
+     31,
+     2
+    ],
+    [
+     "6 beers",
+     900,
+     7
+    ]
+   ]
+  },
+  "2026-11-07": {
+   "calories": 2476.0,
+   "protein": 102.1,
+   "carbs": 258.7,
+   "fat": 120.7,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Half a margarita pizza",
+     450,
+     19
+    ],
+    [
+     "Half a bolognese with egg",
+     336,
+     21
+    ],
+    [
+     "8 pieces of vegetable sushi roll",
+     240,
+     5
+    ],
+    [
+     "Heujvos rancheros with hashbrowns",
+     700,
+     24
+    ]
+   ]
+  },
+  "2026-11-08": {
+   "calories": 2478.0,
+   "protein": 235.6,
+   "carbs": 166.2,
+   "fat": 96.5,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Chicken sandwich",
+     550,
+     47
+    ],
+    [
+     "Chicken sandwich",
+     520,
+     53
+    ],
+    [
+     ".7 lb chicken half cup rice and some broccoli",
+     658,
+     103
+    ]
+   ]
   }
  }
 }
