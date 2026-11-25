@@ -3760,6 +3760,442 @@
      103
     ]
    ]
+  },
+  "2026-11-09": {
+   "calories": 3650.0,
+   "protein": 140.0,
+   "carbs": 309.0,
+   "fat": 204.0,
+   "meals": [
+    [
+     "Egg avocado sausage bagel large",
+     650,
+     32
+    ],
+    [
+     "12 beef empanadas",
+     3000,
+     108
+    ]
+   ]
+  },
+  "2026-11-10": {
+   "calories": 1340.0,
+   "protein": 76.0,
+   "carbs": 88.0,
+   "fat": 77.0,
+   "meals": [
+    [
+     "2 beef empanadas",
+     500,
+     18
+    ],
+    [
+     "4 large beef tacos",
+     840,
+     58
+    ]
+   ]
+  },
+  "2026-11-11": {
+   "calories": 2514.0,
+   "protein": 184.8,
+   "carbs": 267.5,
+   "fat": 73.7,
+   "meals": [
+    [
+     "Very large sandwich",
+     1000,
+     50
+    ],
+    [
+     "Chicken pho",
+     470,
+     39
+    ],
+    [
+     "Pho",
+     450,
+     25
+    ],
+    [
+     ".5 lb chicken",
+     374,
+     70
+    ],
+    [
+     "Half pint sorbet",
+     220,
+     0
+    ]
+   ]
+  },
+  "2026-11-12": {
+   "calories": 3090.0,
+   "protein": 140.4,
+   "carbs": 312.5,
+   "fat": 119.6,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Large chicken burrito",
+     855,
+     63
+    ],
+    [
+     "3 Guinness",
+     375,
+     3
+    ],
+    [
+     "1 pizza",
+     900,
+     38
+    ],
+    [
+     "Some ice cream",
+     210,
+     4
+    ]
+   ]
+  },
+  "2026-11-13": {
+   "calories": 2845.0,
+   "protein": 91.9,
+   "carbs": 257.7,
+   "fat": 109.6,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "6 high noons",
+     600,
+     0
+    ],
+    [
+     "In n out double burger",
+     610,
+     34
+    ],
+    [
+     "Fries",
+     365,
+     4
+    ],
+    [
+     "Pasta",
+     220,
+     8
+    ],
+    [
+     "2 slices pizza",
+     300,
+     13
+    ]
+   ]
+  },
+  "2026-11-14": {
+   "calories": 1739.0,
+   "protein": 69.2,
+   "carbs": 214.6,
+   "fat": 68.9,
+   "meals": [
+    [
+     "Some eggs and bananas",
+     354,
+     15
+    ],
+    [
+     "Bagel with cream cheese",
+     370,
+     12
+    ],
+    [
+     "Brisket sandwich with fries",
+     1015,
+     42
+    ]
+   ]
+  },
+  "2026-11-15": {
+   "calories": 2890.0,
+   "protein": 150.1,
+   "carbs": 198.1,
+   "fat": 145.3,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Sandwich not so fried mendo farms",
+     900,
+     35
+    ],
+    [
+     "Steak a bunch of it and fries",
+     990,
+     82
+    ],
+    [
+     "2 glasses wine",
+     250,
+     0
+    ]
+   ]
+  },
+  "2026-11-16": {
+   "calories": 2300.0,
+   "protein": 0.0,
+   "carbs": 0.0,
+   "fat": 0.0,
+   "meals": [
+    [
+     "Prob 2300 calories",
+     2300,
+     0
+    ]
+   ]
+  },
+  "2026-11-17": {
+   "calories": 1730.0,
+   "protein": 138.6,
+   "carbs": 79.8,
+   "fat": 99.3,
+   "meals": [
+    [
+     ".6 lbs steak",
+     680,
+     70
+    ],
+    [
+     "Large tom yum soup chicken",
+     300,
+     36
+    ],
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ]
+   ]
+  },
+  "2026-11-18": {
+   "calories": 2300.0,
+   "protein": 0.0,
+   "carbs": 0.0,
+   "fat": 0.0,
+   "meals": [
+    [
+     "2300 calories",
+     2300,
+     0
+    ]
+   ]
+  },
+  "2026-11-19": {
+   "calories": 2300.0,
+   "protein": 0.0,
+   "carbs": 0.0,
+   "fat": 0.0,
+   "meals": [
+    [
+     "2300 calories",
+     2300,
+     0
+    ]
+   ]
+  },
+  "2026-11-20": {
+   "calories": 2300.0,
+   "protein": 0.0,
+   "carbs": 0.0,
+   "fat": 0.0,
+   "meals": [
+    [
+     "2300 calories",
+     2300,
+     0
+    ]
+   ]
+  },
+  "2026-11-21": {
+   "calories": 2976.0,
+   "protein": 152.5,
+   "carbs": 219.4,
+   "fat": 154.3,
+   "meals": [
+    [
+     "164",
+     164,
+     0
+    ],
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Heuvos rancheros",
+     600,
+     35
+    ],
+    [
+     "Half bagel and cream cheese",
+     190,
+     6
+    ],
+    [
+     ".56 lbs steak",
+     635,
+     65
+    ],
+    [
+     "Half cup rice",
+     103,
+     2
+    ],
+    [
+     "3 tablespoon butter",
+     306,
+     0
+    ],
+    [
+     "10 brussel sprouts",
+     38,
+     3
+    ],
+    [
+     "Hot chocolate",
+     190,
+     8
+    ]
+   ]
+  },
+  "2026-11-22": {
+   "calories": 2711.0,
+   "protein": 151.0,
+   "carbs": 276.2,
+   "fat": 116.3,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Reuben sandwich",
+     621,
+     33
+    ],
+    [
+     "Large plate of chicken rice hummus",
+     850,
+     72
+    ],
+    [
+     "2 half bagels",
+     280,
+     10
+    ],
+    [
+     "Some mint ice cream",
+     210,
+     4
+    ]
+   ]
+  },
+  "2026-11-23": {
+   "calories": 2844.0,
+   "protein": 126.7,
+   "carbs": 261.5,
+   "fat": 150.8,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "4 large beef empanadas",
+     1200,
+     48
+    ],
+    [
+     "Tofu and rice with broccolini",
+     384,
+     22
+    ],
+    [
+     "3 Taco Bell Doritos locos tacos",
+     510,
+     24
+    ]
+   ]
+  },
+  "2026-11-24": {
+   "calories": 2575.0,
+   "protein": 99.3,
+   "carbs": 276.5,
+   "fat": 83.3,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ],
+    [
+     "Pad Thai",
+     600,
+     22
+    ],
+    [
+     "Sea bass with rice",
+     329,
+     28
+    ],
+    [
+     "Al pastor taco large",
+     330,
+     13
+    ],
+    [
+     "Modelo negra",
+     172,
+     2
+    ],
+    [
+     "2 Guinness",
+     250,
+     2
+    ],
+    [
+     "1 PBR",
+     144,
+     0
+    ]
+   ]
+  },
+  "2026-11-25": {
+   "calories": 750.0,
+   "protein": 32.9,
+   "carbs": 63.5,
+   "fat": 46.3,
+   "meals": [
+    [
+     "100g peanut butter\n100g Greek yogurt\n1 banana\n100gish frozen fruit\nOat milk to fill as smoothie",
+     750,
+     33
+    ]
+   ]
   }
  }
 }
